@@ -31,19 +31,10 @@
   call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
 " }}}
 
-" 标签插件 TagList {{{
-  map <silent> <F3> :TlistToggle<cr>
-  let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
-  let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
-  let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
-  let g:javascript_plugin_jsdoc = 1
-  let g:cssColorVimDoNotMessMyUpdatetime = 1
-  let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-" }}} 
-
 " JavaScript 自动补全插件　tern_vim {{{
   let tern_show_signature_in_pum = 1
   let tern_show_argument_hints = 'on_hold'
+  let tern#is_show_argument_hints_enabled = 0
   autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 " }}}
@@ -52,7 +43,7 @@
   let g:user_emmet_mode='iv'            " 在i 和 v 模式下启用
   let g:user_emmet_leader_key='<tab>'    " 设置快捷键为 tab,
   let g:user_emmet_install_global = 0
-  autocmd FileType html,css EmmetInstall
+  autocmd FileType html,css,vue EmmetInstall
 " }}}
 
 " 文件查找插件 CtrlP {{{

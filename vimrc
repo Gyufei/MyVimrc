@@ -20,11 +20,11 @@ Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
+Plug 'posva/vim-vue'
 call plug#end()
 
 " vimrc files
 for s:path in split(glob('~/.vim/*.vim'), "\n")
-  ec s:path
   exe 'source ' . s:path
 endfor
 

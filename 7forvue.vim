@@ -1,6 +1,23 @@
-"设置vue文件识别为html
-au BufRead,BufNewFile *.vue setfiletype html
+let g:ale_linters = {'vue': ['eslint']}
+let g:vue_disable_pre_processors=1
+let g:ft = ''
 
-" 因为将 vue 文件识别为html文件，所以 ale 为 html 文件加载 js 语法检查
-let g:ale_linters = {'html': ['eslint']}
-let g:ale_linter_aliases = {'html': 'javascript'}
+" 注释
+function! NERDCommenter_befor()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction

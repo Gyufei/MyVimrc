@@ -2,10 +2,9 @@
     let g:airline_powerline_fonts = 1   
     let g:airline_theme='solarized_flood'
     
-  let g:airline#extensions#keymap#enabled = 1
     " tabline功能
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#buffer_nr_show = 1
+    let g:airline#extensions#tabline#buffer_nr_show = 0
     " tab前显示tab序号
     let g:airline#extensions#tabline#tab_nr_type = 1 
     let g:airline#extensions#tabline#buffers_label = 'bufs'
@@ -62,6 +61,12 @@
         \ '' : 'S',
         \ 't'  : 'T',
         \ }
+
+    " layout
+    let g:airline#extensions#default#layout = [
+        \ [ 'a', 'b', 'c' ],
+        \ [ 'x', 'y', 'error', 'warning', 'z']
+        \ ]
 
     let g:airline#extensions#tabline#buffer_idx_mode = 1
     nmap <leader>1 <Plug>AirlineSelectTab1
