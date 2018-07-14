@@ -1,8 +1,6 @@
-set nocompatible
 
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/taglist.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/YouCompleteMe'
@@ -20,12 +18,13 @@ Plug 'tpope/vim-repeat'
 Plug 'leafgarland/typescript-vim'
 Plug 'rking/ag.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
-Plug 'honza/vim-snippets'
 call plug#end()
 
 " vimrc files
 for s:path in split(glob('~/.vim/*.vim'), "\n")
+  ec s:path
   exe 'source ' . s:path
 endfor
 

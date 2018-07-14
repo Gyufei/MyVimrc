@@ -1,11 +1,23 @@
 " 状态栏插件 airline {{{
     let g:airline_powerline_fonts = 1   
     let g:airline_theme='solarized_flood'
-    " 打开tabline功能
+    
+  let g:airline#extensions#keymap#enabled = 1
+    " tabline功能
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#buffer_nr_show = 1
-    " 打开branch 功能
-    let g:airline#extensions#branch#enabled=1
+    " tab前显示tab序号
+    let g:airline#extensions#tabline#tab_nr_type = 1 
+    let g:airline#extensions#tabline#buffers_label = 'bufs'
+
+    " buffer显示在前面
+    let g:airline#extensions#tabline#buf_label_first = 1
+
+    " wordcount
+    let g:airline#extensions#wordcount#formatter#default#fmt = '%s W'
+
+    "不显示空格错误提示
+    let g:airline#extensions#whitespace#enabled = 0
 
     " 当文件为UTF-8时，不显示文件格式
     let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
@@ -22,7 +34,6 @@
     let g:airline_symbols.readonly = ''
     let g:airline_symbols.linenr = '☰'
     let g:airline_symbols.maxlinenr = ''
-    let g:airline#extensions#branch#enabled = 1
 
     " ale
     let g:airline#extensions#ale#enabled = 1
@@ -37,16 +48,31 @@
     let g:airline#extensions#hunks#non_zero_only = 0
     let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 
+    let g:airline_mode_map = {
+        \ '__' : '-',
+        \ 'n'  : 'N',
+        \ 'i'  : 'I',
+        \ 'R'  : 'R',
+        \ 'c'  : 'C',
+        \ 'v'  : 'V',
+        \ 'V'  : 'V',
+        \ '' : 'V',
+        \ 's'  : 'S',
+        \ 'S'  : 'S',
+        \ '' : 'S',
+        \ 't'  : 'T',
+        \ }
+
     let g:airline#extensions#tabline#buffer_idx_mode = 1
-    nnoremap <leader>1 <Plug>AirlineSelectTab1
-    nnoremap <leader>2 <Plug>AirlineSelectTab2
-    nnoremap <leader>3 <Plug>AirlineSelectTab3
-    nnoremap <leader>4 <Plug>AirlineSelectTab4
-    nnoremap <leader>5 <Plug>AirlineSelectTab5
-    nnoremap <leader>6 <Plug>AirlineSelectTab6
-    nnoremap <leader>7 <Plug>AirlineSelectTab7
-    nnoremap <leader>8 <Plug>AirlineSelectTab8
-    nnoremap <leader>9 <Plug>AirlineSelectTab9
-    nnoremap <leader>- <Plug>AirlineSelectPrevTab
-    nnoremap <leader>+ <Plug>AirlineSelectNextTab
+    nmap <leader>1 <Plug>AirlineSelectTab1
+    nmap <leader>2 <Plug>AirlineSelectTab2
+    nmap <leader>3 <Plug>AirlineSelectTab3
+    nmap <leader>4 <Plug>AirlineSelectTab4
+    nmap <leader>5 <Plug>AirlineSelectTab5
+    nmap <leader>6 <Plug>AirlineSelectTab6
+    nmap <leader>7 <Plug>AirlineSelectTab7
+    nmap <leader>8 <Plug>AirlineSelectTab8
+    nmap <leader>9 <Plug>AirlineSelectTab9
+    nmap <leader>- <Plug>AirlineSelectPrevTab
+    nmap <leader>+ <Plug>AirlineSelectNextTab
 " }}}

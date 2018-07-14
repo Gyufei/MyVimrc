@@ -1,3 +1,4 @@
+set nocompatible
 syntax on                   " 开启语法高亮功能 允许用指定语法高亮配色方案替换默认方案
 filetype plugin indent on   " 为特定文件类型载入相应缩进配置
 filetype on                 " 为特定文件类型载入相应文件类型插件
