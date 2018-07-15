@@ -31,12 +31,48 @@
   call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
 " }}}
 
+" 标签插件tagbar {{{
+  nnoremap <silent> <F3> :TagbarToggle<CR>
+  " Ts 的 tag
+  let g:tagbar_type_typescript = {                                                  
+  \ 'ctagsbin' : 'tstags',                                                        
+  \ 'ctagsargs' : '-f-',                                                           
+  \ 'kinds': [                                                                     
+    \ 'e:enums:0:1',                                                               
+    \ 'f:function:0:1',                                                            
+    \ 't:typealias:0:1',                                                           
+    \ 'M:Module:0:1',                                                              
+    \ 'I:import:0:1',                                                              
+    \ 'i:interface:0:1',                                                           
+    \ 'C:class:0:1',                                                               
+    \ 'm:method:0:1',                                                              
+    \ 'p:property:0:1',                                                            
+    \ 'v:variable:0:1',                                                            
+    \ 'c:const:0:1',                                                              
+  \ ],                                                                            
+  \ 'sort' : 0                                                                    
+  \ }           
+  " ultisnips 的 tag
+  let g:tagbar_type_snippets = {
+      \ 'ctagstype' : 'snippets',
+      \ 'kinds' : [
+          \ 's:snippets',
+      \ ]
+  \ }
+" }}}
+
 " JavaScript 自动补全插件　tern_vim {{{
   let tern_show_signature_in_pum = 1
   let tern_show_argument_hints = 'on_hold'
   let tern#is_show_argument_hints_enabled = 0
   autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
   autocmd FileType javascript setlocal omnifunc=tern#Complete
+" }}}
+
+" 代码片段插件 UltiSnips {{{
+  let g:UltiSnipsExpandTrigger="<c-x>"
+  let g:UltiSnipsJumpForwardTrigger="<c-x>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
 
 " Zen-coding　插件 emmet-vim {{{

@@ -1,0 +1,57 @@
+extends javascript
+
+snippet temp "vue template" b
+<template>
+	<${4:div}></$4>
+</template>
+
+<script>
+export default {
+	name: '$1',
+	$0
+}
+</script>
+
+<style lang="$2" ${3:scoped}>
+</style>
+endsnippet
+
+snippet imp "vue import" b
+import $1 from '$2'
+endsnippet
+
+snippet data "vm data" b
+data: function () {
+	return {
+		${1:key}:${2:value}
+	}
+}$0
+endsnippet
+
+snippet props "vm props" b
+props: {
+	${1:propName}: {
+		type: $2
+	}
+}$0
+endsnippet
+
+snippet default "prop default" b
+default () {
+	return $1
+}$0
+endsnippet
+
+snippet prop "prop" b
+${1:propName}: {
+	type: ${2:String}
+}$0
+endsnippet
+
+snippet methods "vm methods" b
+methods: {
+	${1:methodName} (${2:params}) {
+		$3
+	}
+}$0
+endsnippet

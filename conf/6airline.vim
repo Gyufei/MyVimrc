@@ -1,6 +1,6 @@
 " 状态栏插件 airline {{{
     let g:airline_powerline_fonts = 1   
-    let g:airline_theme='solarized_flood'
+    let g:airline_theme='badwolf'
     
     " tabline功能
     let g:airline#extensions#tabline#enabled = 1

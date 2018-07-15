@@ -21,10 +21,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'posva/vim-vue'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
 call plug#end()
 
 " vimrc files
-for s:path in split(glob('~/.vim/*.vim'), "\n")
+for s:path in split(glob('~/.vim/conf/*.vim'), "\n")
   exe 'source ' . s:path
 endfor
 
