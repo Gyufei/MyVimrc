@@ -1,9 +1,9 @@
-noremap <silent> <F3> :call ToggleTerm()<CR>
+noremap <silent> <F4> :call ToggleTerm()<CR>
 
 function! ToggleTerm()
   if has('terminal')
     if exists(':terminal') == 2
-      exec "belowright term++close"
+      exec "belowright term++close ++rows=24"
     else 
       normal! <C-W><C-C>
     endif

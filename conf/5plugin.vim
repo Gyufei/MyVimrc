@@ -32,7 +32,7 @@
 " }}}
 
 " 标签插件tagbar {{{
-  nnoremap <silent> <F4> :TagbarToggle<CR>
+  nnoremap <silent> <F3> :TagbarToggle<CR>
   " Ts 的 tag
   let g:tagbar_type_typescript = {                                                  
   \ 'ctagsbin' : 'tstags',                                                        

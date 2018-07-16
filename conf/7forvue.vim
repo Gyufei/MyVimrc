@@ -1,5 +1,5 @@
 let g:ale_linters = {'vue': ['eslint']}
-let g:vue_disable_pre_processors=1
+" let g:vue_disable_pre_processors=1
 let g:ft = ''
 
 " 注释
