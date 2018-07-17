@@ -23,6 +23,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'posva/vim-vue'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
+Plug 'cakebaker/scss-syntax.vim'
 call plug#end()
 
 " vimrc files

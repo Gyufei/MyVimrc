@@ -1,5 +1,4 @@
 let g:ale_linters = {'vue': ['eslint']}
-" let g:vue_disable_pre_processors=1
 let g:ft = ''
 
 " 注释
@@ -15,6 +14,7 @@ function! NERDCommenter_befor()
     endif
   endif
 endfunction
+
 function! NERDCommenter_after()
   if g:ft == 'vue'
     setf vue
