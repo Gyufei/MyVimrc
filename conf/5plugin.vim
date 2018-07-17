@@ -138,10 +138,12 @@
       \ ['red',         'firebrick3'],
       \ ]
 
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
+  " let g:rbpt_max = 16
+  " let g:rbpt_loadcmd_toggle = 0
+  " au VimEnter * RainbowParenthesesToggle
+  " au Syntax * RainbowParenthesesLoadRound
+  " au Syntax * RainbowParenthesesLoadSquare
+  " au Syntax * RainbowParenthesesLoadBraces
 " }}}
 
 " HTML标签配对高亮插件 MatchTagAlways {{{
@@ -150,6 +152,12 @@
   highlight MatchTag ctermfg=black ctermbg=lightgreen guifg=black guibg=lightgreen
   " 跳转对应标签
   nnoremap <leader>% :MtaJumpToOtherTag<cr>
+  let g:mta_filetypes = {
+      \ 'html' : 1,
+      \ 'xhtml' : 1,
+      \ 'xml' : 1,
+      \ 'vue' : 1,
+      \}
 " }}}
 
 " 注释插件　NerdComment {{{
