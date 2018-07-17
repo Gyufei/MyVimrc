@@ -62,9 +62,8 @@
 " }}}
 
 " JavaScript 自动补全插件　tern_vim {{{
+  let tern_show_argument_hints = 'on_move'
   let tern_show_signature_in_pum = 1
-  let tern_show_argument_hints = 'on_hold'
-  let tern#is_show_argument_hints_enabled = 0
   autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 " }}}
@@ -89,10 +88,10 @@
 " }}}
 
 "  语法检查插件 Ale {{{
+  let g:ale_completion_enabled = 0
   let g:ale_set_highlights = 0
   let g:ale_lint_on_enter = 0         " 进入时检查
   let g:ale_sign_column_always = 1    " 始终开启标志列
-  let g:ale_completion_enabled = 1
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_pattern_options = {'\.min\.js$': {'ale_linters': [], 'ale_fixers': []},'\.min\.css$': {'ale_linters': [], 'ale_fixers': []},}
   let g:ale_linters = {'javascript': ['eslint'],}
@@ -138,12 +137,12 @@
       \ ['red',         'firebrick3'],
       \ ]
 
-  " let g:rbpt_max = 16
-  " let g:rbpt_loadcmd_toggle = 0
-  " au VimEnter * RainbowParenthesesToggle
-  " au Syntax * RainbowParenthesesLoadRound
-  " au Syntax * RainbowParenthesesLoadSquare
-  " au Syntax * RainbowParenthesesLoadBraces
+  let g:rbpt_max = 16
+  let g:rbpt_loadcmd_toggle = 0
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
 " }}}
 
 " HTML标签配对高亮插件 MatchTagAlways {{{

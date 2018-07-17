@@ -16,20 +16,3 @@ vnoremap <Leader>y "+y
 vnoremap <Leader>d "+d
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
-
-"""""""括号的自动补全和跳出"""""""
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap } {}<ESC>i<CR><TAB><ESC>V<O
-
-inoremap <c-e> <c-r>=SkipOutPair()<CR>
-function! SkipOutPair()
-    if getline('.')[col('.') - 1] == ')' || getline('.')[col('.') - 1] == ']' || getline('.')[col('.') - 1] == '"' || getline('.')[col('.') - 1] == "'" || getline('.')[col('.') - 1] == '}'
-        return "\<ESC>la"
-    else
-        return "\t"
-    endif
-endfunc
