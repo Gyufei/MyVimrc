@@ -77,6 +77,7 @@
 " Zen-coding　插件 emmet-vim {{{
   let g:user_emmet_mode='iv'            " 在i 和 v 模式下启用
   let g:user_emmet_leader_key='<tab>'    " 设置快捷键为 tab,
+  let g:user_emmet_settings = 0
   let g:user_emmet_install_global = 0
   autocmd FileType html,css,vue EmmetInstall
 " }}}

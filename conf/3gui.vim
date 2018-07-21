@@ -1,5 +1,5 @@
-" set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 12 " linux 配置
-set guifont=Noto_Mono_for_Powerline:h14 "mac&win 字体配置
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 12 " linux 配置
+" set guifont=Noto_Mono_for_Powerline:h14 "mac&win 字体配置
 
 colorscheme molokai         " 颜色主题
 set guioptions-=T           " 隐藏工具栏
