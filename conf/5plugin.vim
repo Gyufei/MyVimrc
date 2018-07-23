@@ -88,7 +88,7 @@
 " }}}
 
 "  语法检查插件 Ale {{{
-  let g:ale_completion_enabled = 0
+  let g:ale_completion_enabled = 1
   let g:ale_set_highlights = 0
   let g:ale_lint_on_enter = 0         " 进入时检查
   let g:ale_sign_column_always = 1    " 始终开启标志列
