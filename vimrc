@@ -28,8 +28,19 @@ Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 " vimrc files
-for s:path in split(glob('~/.vim/conf/*.vim'), "\n")
-  exe 'source ' . s:path
+let s:MyVimConfigFiles = [
+    \'basic.vim', 
+    \'term.vim',
+    \'keymap.vim', 
+    \'gui.vim', 
+    \'ycm.vim',
+    \'plugin.vim',
+    \'airline.vim',
+    \'forvue.vim'
+    \]
+
+for s:path in s:MyVimConfigFiles
+  exe 'source ' .'~/.vim/conf/'.s:path
 endfor
 
 augroup filetype_vim
