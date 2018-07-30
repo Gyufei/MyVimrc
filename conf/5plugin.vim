@@ -16,12 +16,12 @@
    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
   endfunction
 
-  call NERDTreeHighlightFile('html', 'yellow', 'none', '#b9d7ea', '#151515')
-  call NERDTreeHighlightFile('css', 'cyan', 'none', '#25fb73', '#151515')
+  call NERDTreeHighlightFile('html', 'cyan', 'none', '#b9d7ea', '#151515')
+  call NERDTreeHighlightFile('css', 'lightBlue', 'none', '#25fb73', '#151515')
   call NERDTreeHighlightFile('js', 'Red', 'none', '#e20062', '#151515')
-  call NERDTreeHighlightFile('vue', 'yellow', 'none', '#43b67a', '#151515')
+  call NERDTreeHighlightFile('vue', 'LightGreen', 'none', '#43b67a', '#151515')
   call NERDTreeHighlightFile('ts', 'Red', 'none', '#1f3c6d', '#151515')
-  call NERDTreeHighlightFile('json', 'yellow', 'none', '#e0d909', '#151515')
+  call NERDTreeHighlightFile('json', 'magenta', 'none', '#e0d909', '#151515')
   call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
   call NERDTreeHighlightFile('style', 'cyan', 'none', 'cyan', '#151515')
   call NERDTreeHighlightFile('php', 'Red', 'none', '#ff00ff', '#151515')
