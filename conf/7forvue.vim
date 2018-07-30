@@ -1,8 +1,7 @@
-let g:ale_linters = {'vue': ['eslint']}
 let g:ft = ''
 
 " 注释
-function! NERDCommenter_befor()
+function! NERDCommenter_before()
   if &ft == 'vue'
     let g:ft = 'vue'
     let stack = synstack(line('.'), col('.'))
