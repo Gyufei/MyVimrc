@@ -16,7 +16,7 @@ hi Visual term=reverse ctermbg=gray guibg=#403D3D
 set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 
 " iterm2下光标的样式变换
-if $TERM_PROGRAM =~ "iTerm"
-    let &t_EI = "\e[2 q" " Block in normal mode
-    let &t_SI = "\e[5 q" " Vertical bar in insert mode
-endif
+" if $TERM_PROGRAM =~ "iTerm"
+    " let &t_EI = \e[2 q" " Block in normal mode
+    " let &t_SI = \e[5 q" " Vertical bar in insert mode
+" endif

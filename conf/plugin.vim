@@ -16,12 +16,12 @@
    exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
   endfunction
 
-  call NERDTreeHighlightFile('html', 'yellow', 'none', '#b9d7ea', '#151515')
-  call NERDTreeHighlightFile('css', 'cyan', 'none', '#25fb73', '#151515')
+  call NERDTreeHighlightFile('html', 'cyan', 'none', '#b9d7ea', '#151515')
+  call NERDTreeHighlightFile('css', 'lightBlue', 'none', '#25fb73', '#151515')
   call NERDTreeHighlightFile('js', 'Red', 'none', '#e20062', '#151515')
-  call NERDTreeHighlightFile('vue', 'yellow', 'none', '#43b67a', '#151515')
+  call NERDTreeHighlightFile('vue', 'LightGreen', 'none', '#43b67a', '#151515')
   call NERDTreeHighlightFile('ts', 'Red', 'none', '#1f3c6d', '#151515')
-  call NERDTreeHighlightFile('json', 'yellow', 'none', '#e0d909', '#151515')
+  call NERDTreeHighlightFile('json', 'magenta', 'none', '#e0d909', '#151515')
   call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
   call NERDTreeHighlightFile('style', 'cyan', 'none', 'cyan', '#151515')
   call NERDTreeHighlightFile('php', 'Red', 'none', '#ff00ff', '#151515')
@@ -62,8 +62,7 @@
 " }}}
 
 " JavaScript 自动补全插件　tern_vim {{{
-  let tern_show_argument_hints = 'on_move'
-  let tern_show_signature_in_pum = 1
+  let tern_show_signature_in_pum = 0
   autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 " }}}
@@ -89,7 +88,7 @@
 " }}}
 
 "  语法检查插件 Ale {{{
-  let g:ale_completion_enabled = 1
+  let g:ale_completion_enabled = 0
   let g:ale_set_highlights = 0
   let g:ale_lint_on_enter = 0         " 进入时检查
   let g:ale_sign_column_always = 1    " 始终开启标志列
