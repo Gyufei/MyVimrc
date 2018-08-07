@@ -4,7 +4,7 @@
     
     " tabline功能
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#buffer_nr_show = 0
+    let g:airline#extensions#tabline#buffer_nr_show = 1
     " tab前显示tab序号
     let g:airline#extensions#tabline#tab_nr_type = 1 
     let g:airline#extensions#tabline#buffers_label = 'bufs'
