@@ -16,3 +16,6 @@ vnoremap <Leader>y "+y
 vnoremap <Leader>d "+d
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
+
+" 右移一格，用于跳出括号
+inoremap <c-l> <esc>la
