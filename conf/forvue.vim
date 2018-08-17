@@ -1,6 +1,10 @@
-let g:ft = ''
+" vue 文件中的特定缩写(仅适用于我当前的项目，所以没有加入snippets中的必要
+iabbrev lay layout
+iabbrev laya layout-align=
 
 " 注释
+let g:ft = ''
+
 function! NERDCommenter_before()
   if &ft == 'vue'
     let g:ft = 'vue'
