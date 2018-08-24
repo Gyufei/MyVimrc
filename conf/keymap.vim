@@ -18,4 +18,26 @@ vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
 
 " 右移一格，用于跳出括号
-inoremap <c-l> <esc>la
+inoremap <c-l> <right>
+inoremap <c-k> <left>
+
+" 清除当前窗口除当前buffer外的所有buffer
+function! DeleteAllBuffersInWindow()
+  let s:curWinNr = winnr()
+  if winbufnr(s:curWinNr) == 1
+    ret
+  endif
+
+  let s:curBufNr = bufnr("%")
+  exe "bn"
+
+  let s:nextBufNr = bufnr("%")
+
+  while s:nextBufNr != s:curBufNr
+    exe "bn"
+    exe "bdel ".s:nextBufNr
+    let s:nextBufNr = bufnr("%")
+  endwhile
+endfun
+
+noremap <leader>dab :call DeleteAllBuffersInWindow()<CR>
