@@ -18,8 +18,8 @@ vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
 
 " 右移一格，用于跳出括号
-inoremap <c-l> <right>
-inoremap <c-k> <left>
+inoremap <c-l> <RIGHT>
+inoremap <c-k> <LEFT>
 
 " 清除当前窗口除当前buffer外的所有buffer
 function! DeleteAllBuffersInWindow()
