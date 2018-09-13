@@ -34,6 +34,7 @@ let s:MyVimConfigFiles = [
     \'keymap.vim', 
     \'gui.vim', 
     \'ycm.vim',
+    \'ale.vim',
     \'plugin.vim',
     \'airline.vim',
     \'forvue.vim'
