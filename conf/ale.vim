@@ -5,9 +5,10 @@
   let g:ale_sign_column_always = 1    " 始终开启标志列
   let g:ale_lint_on_text_changed = 'never'
   let g:ale_pattern_options = {'\.min\.js$': {'ale_linters': [], 'ale_fixers': []},'\.min\.css$': {'ale_linters': [], 'ale_fixers': []},}
-  let g:ale_linters = {'javascript': ['eslint'],}
-  let g:ale_linters = {'typescript': ['tslint'],}
-  let g:ale_linters = {'python': ['flake8'],}
+  let g:ale_linters = {
+  \   'javascript': ['eslint'], 
+  \   'typescript': ['tslint', 'tsserver', 'typecheck'], 
+  \   'python': ['flake8'] }
 
   let g:ale_fixers = {
   \   'typescript': ['tslint']
