@@ -1,5 +1,6 @@
 " 目录树插件 NerdTree {{{
   map <F2> :NERDTreeToggle<CR>
+  map <F3> :NERDTreeFind<CR>
  "默认显示书签
   let NERDTreeShowBookmarks=1       
   " 忽略文件
@@ -32,7 +33,8 @@
 " }}}
 
 " 标签插件tagbar {{{
-  nnoremap <silent> <F3> :TagbarToggle<CR>
+  nnoremap <silent> <F8> :TagbarToggle<CR>
+  let g:tagbar_ctags_bin='/usr/bin/ctags'
   " Ts 的 tag
   let g:tagbar_type_typescript = {                                                  
   \ 'ctagsbin' : 'tstags',                                                        
