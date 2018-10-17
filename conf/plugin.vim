@@ -32,37 +32,6 @@
   call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
 " }}}
 
-" 标签插件tagbar {{{
-  nnoremap <silent> <F8> :TagbarToggle<CR>
-  let g:tagbar_ctags_bin='/usr/bin/ctags'
-  " Ts 的 tag
-  let g:tagbar_type_typescript = {                                                  
-  \ 'ctagsbin' : 'tstags',                                                        
-  \ 'ctagsargs' : '-f-',                                                           
-  \ 'kinds': [                                                                     
-    \ 'e:enums:0:1',                                                               
-    \ 'f:function:0:1',                                                            
-    \ 't:typealias:0:1',                                                           
-    \ 'M:Module:0:1',                                                              
-    \ 'I:import:0:1',                                                              
-    \ 'i:interface:0:1',                                                           
-    \ 'C:class:0:1',                                                               
-    \ 'm:method:0:1',                                                              
-    \ 'p:property:0:1',                                                            
-    \ 'v:variable:0:1',                                                            
-    \ 'c:const:0:1',                                                              
-  \ ],                                                                            
-  \ 'sort' : 0                                                                    
-  \ }           
-  " ultisnips 的 tag
-  let g:tagbar_type_snippets = {
-      \ 'ctagstype' : 'snippets',
-      \ 'kinds' : [
-          \ 's:snippets',
-      \ ]
-  \ }
-" }}}
-
 " JavaScript 自动补全插件　tern_vim {{{
   let tern_show_signature_in_pum = 0
   autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
@@ -147,8 +116,7 @@
   let g:ag_highlight=1
 
   " 配置 Ag 命令为快捷键 ge
-  vnoremap <silent> ge "ge:Ag "
-  nnoremap <c-f> :Ag 
+  nnoremap <c-f> :Ag! 
 " }}}
 
 " git文件修改状态插件 gitGutter {{{
@@ -159,4 +127,43 @@
 
 " 移动插件easymotion {{{
   let g:EasyMotion_smartcase = 1  " 忽略大小写
+" }}}
+
+" 自动匹配括号插件autoPairs {{{
+  autocmd FileType HTML,vue let b:AutoPairs = {"<": ">"}
+  let g:AutoPairsShortcutToggle = ''
+  let g:AutoPairsShortcutBackInsert = ''
+  let g:AutoPairsShortcutFastWrap = ''
+  let g:AutoPairShortcutJump = ''
+" }}}
+
+"" 标签插件tagbar {{{
+  nnoremap <silent> <F8> :TagbarToggle<CR>
+  let g:tagbar_ctags_bin='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
+  " Ts 的 tag
+  let g:tagbar_type_typescript = {
+  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsargs' : '-f-',
+  \ 'kinds': [
+    \ 'e:enums:0:1',
+    \ 'f:function:0:1',
+    \ 't:typealias:0:1',
+    \ 'M:Module:0:1',
+    \ 'I:import:0:1',
+    \ 'i:interface:0:1',
+    \ 'C:class:0:1',
+    \ 'm:method:0:1',
+    \ 'p:property:0:1',
+    \ 'v:variable:0:1',
+    \ 'c:const:0:1',
+  \ ],
+  \ 'sort' : 0
+  \ }
+  " ultisnips 的 tag
+  let g:tagbar_type_snippets = {
+      \ 'ctagstype' : 'snippets',
+      \ 'kinds' : [
+          \ 's:snippets',
+      \ ]
+  \ }
 " }}}
