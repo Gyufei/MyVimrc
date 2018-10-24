@@ -130,7 +130,6 @@
 " }}}
 
 " 自动匹配括号插件autoPairs {{{
-  autocmd FileType HTML,vue let b:AutoPairs = {"<": ">"}
   let g:AutoPairsShortcutToggle = ''
   let g:AutoPairsShortcutBackInsert = ''
   let g:AutoPairsShortcutFastWrap = ''

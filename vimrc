@@ -1,4 +1,3 @@
-
 call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'

@@ -1,7 +1,7 @@
-let mapleader = ";"
+let mapleader = "\<Space>"
 
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :call Preventwinclosed()<CR>
+nnoremap <Leader>q :bd %<CR>
 
 " 窗口切换
 nnoremap <c-h> <c-w>h  
@@ -41,13 +41,3 @@ function! DeleteAllBuffersInWindow()
 endfun
 
 noremap <leader>dab :call DeleteAllBuffersInWindow()<CR>
-
-" 关闭最后一个buffer或标签时不关闭当前窗口
-function! Preventwinclosed()
-  let a:notabpages = tabpagenr('$') == 1 && winnr('$') == 1
-  if a:notabpages
-    execute 'enew'
-  else
-    execute 'q'
-  endif
-endfunction
