@@ -1,5 +1,4 @@
 noremap <silent> <F4> :call ToggleTerm()<CR>
-hi Terminal ctermbg=lightgrey ctermfg=blue guibg=lightgrey guifg=blue
 
 function! ToggleTerm()
   if has('terminal')
