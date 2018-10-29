@@ -24,12 +24,12 @@
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
   "普通模式下，zp前往上一个错误或警告，zn前往下一个错误或警告
-  nnoremap zp <Plug>(ale_previous_wrap)
-  nnoremap zn <Plug>(ale_next_wrap)
+  nnoremap <leader>ep <Plug>(ale_previous_wrap)
+  nnoremap <leader>en <Plug>(ale_next_wrap)
   "<Leader>lw触发/关闭语法检查
-  nmap <Leader>lw :ALEToggle<CR>
+  nmap <Leader>et :ALEToggle<CR>
   "<Leader>ld查看错误或警告的详细信息
-  nmap <Leader>ld :ALEDetail<CR>
+  nmap <Leader>ed :ALEDetail<CR>
   "<leader>j跳转到定义
   nmap <Leader>jd :ALEGoToDefinition<CR>
 "  }}}
