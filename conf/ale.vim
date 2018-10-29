@@ -23,11 +23,12 @@
   let g:ale_echo_msg_warning_str = '⚠ Warning'
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-  "普通模式下，zp前往上一个错误或警告，zn前往下一个错误或警告
-  nnoremap <leader>ep <Plug>(ale_previous_wrap)
-  nnoremap <leader>en <Plug>(ale_next_wrap)
   "<Leader>lw触发/关闭语法检查
   nmap <Leader>et :ALEToggle<CR>
+  "普通模式下，前往上一个错误或警告，
+  nmap <Leader>ep <Plug>(ale_previous_wrap)
+  " 前往下一个错误或警告
+  nmap <Leader>en <Plug>(ale_next_wrap)
   "<Leader>ld查看错误或警告的详细信息
   nmap <Leader>ed :ALEDetail<CR>
   "<leader>j跳转到定义
