@@ -1,7 +1,8 @@
 let mapleader = "\<Space>"
 
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>Q :q<CR>
+nnoremap <Leader>q :bd %<CR>
+nnoremap <Leader>Q :qa<CR>
 
 " 窗口切换
 nnoremap <c-h> <c-w>h  
@@ -40,5 +41,4 @@ function! DeleteAllBuffersInWindow()
   endwhile
 endfun
 
-nnoremap <Leader>q :bd %<CR>
 noremap <leader>bm :call DeleteAllBuffersInWindow()<CR>
