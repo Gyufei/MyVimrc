@@ -57,6 +57,4 @@ set selectmode=mouse,key
 set gcr=a:block-blinkon0    " 禁止光标闪烁
 
 colorscheme gruvbox         " 颜色主题
-
-" 选中行样式
-hi Visual term=reverse ctermbg=gray guibg=#403D3D
+set bg=dark                 " 暗色主题
