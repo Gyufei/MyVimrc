@@ -121,10 +121,12 @@
   nnoremap <c-f> :Ag! 
 " }}}
 
-" git文件修改状态插件 gitGutter {{{
-  set updatetime=100             " 设置vim文件刷新时间为1ms
-  let g:gitgutter_max_signs=200  " 显示的标志数量，默认为500
-  let g:gitgutter_map_keys = 0   " 不设置任何插件快捷键
+" 文件修改状态插件 signify {{{
+  let g:signify_vcs_list = ['git']  "变更检测工具支持
+  " 跳转修改标记
+  nmap <leader>gn <plug>(signify-next-hunk)
+  nmap <leader>gp <plug>(signify-prev-hunk)
+  nnoremap <leader>gd :SignifyDiff<CR>
 " }}}
 
 " 移动插件easymotion {{{

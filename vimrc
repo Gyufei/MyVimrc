@@ -17,13 +17,15 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'rking/ag.vim'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'posva/vim-vue'
 Plug 'majutsushi/tagbar'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'morhetz/gruvbox'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 " vimrc files
