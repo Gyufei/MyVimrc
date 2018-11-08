@@ -21,7 +21,7 @@ import $1 from '$2'
 endsnippet
 
 snippet data "vm data" b
-data: function () {
+data() {
 	return {
 		${1:key}:${2:value}
 	}
@@ -54,4 +54,12 @@ methods: {
 		$3
 	}
 }$0
+endsnippet
+
+snippet mapGet "import mapGetter" b
+import { mapGetter } from 'vuex'
+endsnippet
+
+snippet mapAct "import mapGetter" b
+import { mapAction } from 'vuex'
 endsnippet
