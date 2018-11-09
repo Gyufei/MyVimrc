@@ -9,7 +9,11 @@ inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif	 " 离开插入模式后自动关闭预览窗口
+
+augroup ycmau
+  autocmd!
+  autocmd InsertLeave * if pumvisible() == 0|pclose|endif	 " 离开插入模式后自动关闭预览窗口
+augroup END
 
 " youcompleteme  默认tab  s-tab 和自动补全冲突
 let g:ycm_key_list_select_completion=['<c-n>']

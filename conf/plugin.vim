@@ -6,10 +6,13 @@
   " 忽略文件
   let NERDTreeIgnore=['\c^ntuser\..*']
   let NERDTreeIgnore=['\.pyc$', '\~$', '.DS_Store', '\.swp' ]
-  autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-  " 当 NerdTree 为最后一个 window　时自动关闭 
-  " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  augroup nerdtree
+    autocmd!
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+    " 当 NerdTree 为最后一个 window　时自动关闭 
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+  augroup END
 
   " 目录树文件颜色区分
   function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -34,8 +37,12 @@
 
 " JavaScript 自动补全插件　tern_vim {{{
   let tern_show_signature_in_pum = 0
-  autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
-  autocmd FileType javascript setlocal omnifunc=tern#Complete
+
+  augroup jscomplete
+    autocmd!
+    autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+  augroup END
 " }}}
 
 " 代码片段插件 UltiSnips {{{
@@ -51,7 +58,11 @@
   let g:user_emmet_leader_key='<tab>'    " 设置快捷键为 tab,
   let g:user_emmet_settings = 0
   let g:user_emmet_install_global = 0
-  autocmd FileType html,css,vue EmmetInstall
+
+  augroup emmet
+    autocmd!
+    autocmd FileType html,css,vue EmmetInstall
+  augroup END
 " }}}
 
 " 文件查找插件 CtrlP {{{
@@ -172,3 +183,7 @@
       \ ]
   \ }
 " }}}
+
+""{{{ 缩进线插件 indent_line
+nnoremap <Leader>lt :IndentLinesToggle<CR>
+""}}}

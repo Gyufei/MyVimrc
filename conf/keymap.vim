@@ -42,3 +42,6 @@ function! DeleteAllBuffersInWindow()
 endfun
 
 noremap <leader>bm :call DeleteAllBuffersInWindow()<CR>
+
+" 重新载入vim配置
+nnoremap  <leader>fvr :source ~/.vim/vimrc<CR>

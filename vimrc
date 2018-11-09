@@ -17,7 +17,6 @@ Plug 'terryma/vim-smooth-scroll'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'rking/ag.vim'
-" Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'posva/vim-vue'
@@ -26,6 +25,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-signify'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " vimrc files
