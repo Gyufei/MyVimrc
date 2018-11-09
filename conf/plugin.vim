@@ -42,6 +42,8 @@
   let g:UltiSnipsExpandTrigger="<c-x>"
   let g:UltiSnipsJumpForwardTrigger="<c-x>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+  " 不遍历查询snip文件，直接去此目录获取
+  let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " }}}
 
 " Zen-coding　插件 emmet-vim {{{
