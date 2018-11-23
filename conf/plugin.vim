@@ -1,7 +1,7 @@
 " 目录树插件 NerdTree {{{
   map <F2> :NERDTreeToggle<CR>
   map <F3> :NERDTreeFind<CR>
- "默认显示书签
+  " 默认显示书签
   let NERDTreeShowBookmarks=1       
   " 忽略文件
   let NERDTreeIgnore=['\c^ntuser\..*']

@@ -38,7 +38,7 @@ let s:MyVimConfigFiles = [
     \'ale.vim',
     \'plugin.vim',
     \'airline.vim',
-    \'forvue.vim'
+    \'ft.vim'
     \]
 
 for s:path in s:MyVimConfigFiles

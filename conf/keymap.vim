@@ -3,6 +3,8 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :bd %<CR>
 nnoremap <Leader>Q :qa<CR>
+" 使用sudo命令保存文件
+command! W w !sudo tee % > /dev/null
 
 " 窗口切换
 nnoremap <c-h> <c-w>h  
@@ -17,6 +19,27 @@ vnoremap <Leader>y "+y
 vnoremap <Leader>d "+d
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
+
+" 选中模式下使用 * 和 # 搜索选中单词
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+vnoremap <silent> * :<C-u>cal  VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " 右移一格，用于跳出括号
 inoremap <c-l> <RIGHT>
@@ -45,3 +68,9 @@ noremap <leader>bm :call DeleteAllBuffersInWindow()<CR>
 
 " 重新载入vim配置
 nnoremap  <leader>fvr :source ~/.vim/vimrc<CR>
+
+" 进入文件时跳转到上次编辑位置
+augroup LastEditPos
+  autocmd!
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+augroup END
