@@ -10,8 +10,9 @@
 + `gui.vim`   GUI中的一些配置项
 + `keymap.vim` 自定义快捷键配置
 + `plugin.vim` 各插件的配置(一些配置项较多的插件可以视情况单独再分为一个模块，例如YCM)
-+ `ycm.vim`    YouCompleteMe 插件的配置
-+ `airline.vim` vim-airline 插件的配置
-+ `forvue.vim` 用于针对 VUE 格式文件的配置（不得不吐槽一下VUE的VIM生态简直等于没有)
++ `ycm.vim`    自动补全YouCompleteMe 插件的配置
++ `ale.vim`    语法检查 ALE 插件的配置
++ `airline.vim` 状态条vim-airline 插件的配置
++ `ft.vim` 用于针对各种格式文件的专门配置
 
-在vimrc文件中定义了一个函数，可以读取.vim目录下的所有vim格式的文件并载入，因此可以随意新增模块。（例如可以新增个zheteng.vim用来体验各种奇怪的配置项^()^
+在vimrc文件中定义了一个函数，可以读取.vim目录下的vim格式的文件并载入。
