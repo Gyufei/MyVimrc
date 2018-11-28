@@ -60,3 +60,15 @@ nnoremap <leader>mk :call Compile_Run_Code()<cr>
       au FileType vue call AddVueDict()
     augroup END
 " }}}
+
+" JavaScript 类型文件 {{{
+function AddJavaScriptDict()
+    set dict+=~/.vim/dict/javascript.txt
+    set complete+=k
+endfunction
+
+augroup JsDict
+  autocmd!
+  au FileType javascript,typescript call AddJavaScriptDict()
+augroup END
+" }}}

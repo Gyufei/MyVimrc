@@ -12,6 +12,7 @@
 
   let g:ale_fixers = {
   \   'javascript': ['eslint'], 
+  \   'vue': ['eslint'], 
   \   'typescript': ['tslint']
   \}
 
