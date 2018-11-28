@@ -72,3 +72,11 @@ augroup JsDict
   au FileType javascript,typescript call AddJavaScriptDict()
 augroup END
 " }}}
+
+" Vim 类型文件 {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+    autocmd FileType vim setlocal foldlevel=0
+augroup END
+" }}}

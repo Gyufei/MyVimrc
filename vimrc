@@ -44,9 +44,3 @@ let s:MyVimConfigFiles = [
 for s:path in s:MyVimConfigFiles
   exe 'source ' .'~/.vim/conf/'.s:path
 endfor
-
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-    autocmd FileType vim setlocal foldlevel=0
-augroup END
