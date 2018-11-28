@@ -11,6 +11,7 @@
   \   'python': ['flake8'] }
 
   let g:ale_fixers = {
+  \   'javascript': ['eslint'], 
   \   'typescript': ['tslint']
   \}
 
@@ -23,15 +24,21 @@
   let g:ale_echo_msg_warning_str = '⚠ Warning'
   let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-  "<Leader>lw触发/关闭语法检查
-  nmap <Leader>et :ALEToggle<CR>
-  "普通模式下，前往上一个错误或警告，
+  " 触发/关闭语法检查
+  nmap <Leader>et <Plug>(ale_toggle)
+
+  " 格式化
+  nmap <Leader>ef <Plug>(ale_fix)
+
+  " 前往上一个错误或警告，
   nmap <Leader>ep <Plug>(ale_previous_wrap)
   " 前往下一个错误或警告
   nmap <Leader>en <Plug>(ale_next_wrap)
+
   "<Leader>ld查看错误或警告的详细信息
-  nmap <Leader>ed :ALEDetail<CR>
+  nmap <Leader>ed <Plug>(ale_detail)
+
   "<leader>j跳转到定义
-  nmap <Leader>jd :ALEGoToDefinition<CR>
+  nmap <Leader>jd <Plug>(ale_go_to_definition)
 "  }}}
 
