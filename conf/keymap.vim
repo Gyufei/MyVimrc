@@ -15,10 +15,12 @@ nnoremap <c-k> <c-w>k
 " 系统剪切板的复制粘贴
 nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
-vnoremap <Leader>y "+y
-vnoremap <Leader>d "+d
 vnoremap <Leader>p "+p
 vnoremap <Leader>P "+P
+vnoremap <Leader>y "+y
+vnoremap <Leader>d "+d
+" 选中上次粘贴内容
+nnoremap <expr> <Leader>vp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " 选中模式下使用 * 和 # 搜索选中单词
 function! VisualSelection(direction, extra_filter) range

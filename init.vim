@@ -3,7 +3,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'marijnh/tern_for_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/MatchTagAlways'

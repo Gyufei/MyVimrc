@@ -1,6 +1,6 @@
 " 目录树插件 NerdTree {{{
   map <F2> :NERDTreeToggle<CR>
-  map <F3> :NERDTreeFind<CR>
+  map <Leader><F2> :NERDTreeFind<CR>
   " 默认显示书签
   let NERDTreeShowBookmarks=1       
   " 忽略文件
@@ -33,16 +33,6 @@
   call NERDTreeHighlightFile('py', 'green', 'none', 'green', '#151515')
   call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
   call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-" }}}
-
-" JavaScript 自动补全插件　tern_vim {{{
-  let tern_show_signature_in_pum = 0
-
-  augroup jscomplete
-    autocmd!
-    autocmd FileType javascript nnoremap <leader>d :TernDef<CR>
-    autocmd FileType javascript setlocal omnifunc=tern#Complete
-  augroup END
 " }}}
 
 " 代码片段插件 UltiSnips {{{
@@ -185,5 +175,7 @@
 " }}}
 
 ""{{{ 缩进线插件 indent_line
+let g:indentLine_enabled = 0
+let g:indentLine_setColors = 0
 nnoremap <Leader>lt :IndentLinesToggle<CR>
 ""}}}
