@@ -121,7 +121,7 @@
   let g:ag_highlight=1
 
   " 配置 Ag 命令为快捷键 ge
-  nnoremap <c-f> :Ag! 
+  nnoremap <Leader>/ :Ag! 
 " }}}
 
 " 文件修改状态插件 signify {{{

@@ -44,8 +44,8 @@ vnoremap <silent> * :<C-u>cal  VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 
 " 右移一格，用于跳出括号
-inoremap <c-l> <RIGHT>
-inoremap <c-k> <LEFT>
+inoremap <c-f> <RIGHT>
+inoremap <c-b> <LEFT>
 
 " 清除当前窗口除当前buffer外的所有buffer
 function! DeleteAllBuffersInWindow()
