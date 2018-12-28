@@ -26,6 +26,8 @@ nnoremap <leader>mk :call Compile_Run_Code()<cr>
     iabbrev lay layout
     iabbrev laya layout-align=
 
+    let g:vue_disable_pre_processors = 1
+
     " 注释
     let g:ft = ''
     fu! NERDCommenter_before()
