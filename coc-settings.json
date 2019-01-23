@@ -1,3 +1,4 @@
 {
-  "coc.preferences.minTriggerInputLength": 2
+  "coc.preferences.minTriggerInputLength": 2,
+  "coc.preferences.diagnostic.displayByAle": true
 }

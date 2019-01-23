@@ -2,7 +2,8 @@ call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" Plug 'Valloric/YouCompleteMe'
 Plug 'leafgarland/typescript-vim'
 Plug 'SirVer/ultisnips'
 Plug 'Valloric/MatchTagAlways'
