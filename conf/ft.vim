@@ -57,9 +57,10 @@ nnoremap <leader>mk :call Compile_Run_Code()<cr>
       set complete+=k
     endfunction
 
-    augroup VueDict
+    augroup Vue
       autocmd!
       au FileType vue call AddVueDict()
+      autocmd FileType vue syntax sync fromstart
     augroup END
 " }}}
 
