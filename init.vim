@@ -10,6 +10,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'mxw/vim-jsx'
 
 " 补全和代码片段
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
