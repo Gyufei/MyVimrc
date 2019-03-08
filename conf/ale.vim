@@ -16,10 +16,9 @@
   \   'typescript': ['tslint']
   \}
 
-
   let g:ale_sign_error = '✗'          " 自定义error图标
-  let g:ale_sign_warning = '⚡'    " 自定义warning图标
-  let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+  let g:ale_sign_warning = '●'    " 自定义warning图标
+  let g:ale_statusline_format = ['✗ %d', '● %d', '✔ OK']
   "显示Linter名称,出错或警告等相关信息
   let g:ale_echo_msg_error_str = '✷ Error'
   let g:ale_echo_msg_warning_str = '⚠ Warning'

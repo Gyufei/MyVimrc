@@ -1,14 +1,14 @@
 call plug#begin('~/.vim/bundle')
 " 文件查找,目录,标签支持
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
 
 " 语法支持
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'posva/vim-vue'
+Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'cakebaker/scss-syntax.vim'
 
 " 补全和代码片段
@@ -37,7 +37,7 @@ Plug 'easymotion/vim-easymotion'
 
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesToggle' }
 call plug#end()
 
 " vimrc files
