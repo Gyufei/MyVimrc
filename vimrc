@@ -3,7 +3,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
+Plug 'dyng/ctrlsf.vim'
 
 " 语法支持
 Plug 'pangloss/vim-javascript'
