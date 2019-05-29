@@ -9,10 +9,14 @@
 + `basic.vim` 基础配置
 + `gui.vim`   GUI中的一些配置项
 + `keymap.vim` 自定义快捷键配置
-+ `plugin.vim` 各插件的配置(一些配置项较多的插件可以视情况单独再分为一个模块，例如YCM)
-+ `ycm.vim`    自动补全YouCompleteMe 插件的配置
++ `plugin.vim` 各插件的配置(一些配置项较多的插件可以视情况单独再分为一个模块)
 + `ale.vim`    语法检查 ALE 插件的配置
 + `airline.vim` 状态条vim-airline 插件的配置
 + `ft.vim` 用于针对各种格式文件的专门配置
++ `term.vim` 用于支持vim内命令行的配置
++ `completion.vim` 补全设置
 
-在vimrc文件中定义了一个函数，可以读取.vim目录下的vim格式的文件并载入。
+### ChangeLog
+
++ *2019-4-15* 弃用 `ag.vim`, 使用 `ctrlsf`
++ *2019-5-29* 弃用 `YCM`,全面拥抱 `CoC.nvim`(为了`language server`)

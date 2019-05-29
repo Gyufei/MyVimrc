@@ -13,14 +13,17 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'mxw/vim-jsx'
 
 " 补全和代码片段
-" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'SirVer/ultisnips'
 Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdcommenter'
+if has('nvim')
+  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+else
+  Plug 'SirVer/ultisnips'
+endif
 
 " 语法检查
 Plug 'w0rp/ale'
 
-Plug 'scrooloose/nerdcommenter'
 
 " 界面美化和功能增强
 Plug 'luochen1990/rainbow'
@@ -46,10 +49,9 @@ let s:MyVimConfigFiles = [
     \'term.vim',
     \'keymap.vim', 
     \'gui.vim', 
-    \'ycm.vim',
     \'ale.vim',
     \'plugin.vim',
-    \'justInVim.vim',
+    \'completion.vim',
     \'airline.vim',
     \'ft.vim'
     \]
