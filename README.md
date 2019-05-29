@@ -3,7 +3,26 @@
 > 随着使用 **VIM** 的时间越来越长，添加的各种配置和插件越来越多，vimrc也变得越来越臃肿和混乱，
 > 新增和修改配置非常不方便。所以将　vimrc 文件按类型拆分为多个模块，以便于修改配置(和瞎折腾)。
 
-### 舍弃了主目录下的`.vimrc`文件，将配置移动到`.vim`文件夹中，更名为`vimrc`(VIM 会自动读取),目的是便于版本管理。
+
+### Install
++ `clone` 项目 
+  ```
+  git clone git@github.com:Gyufei/MyVimrc.git
+  ```
++ 安装 **vim-plug** 插件管理插件
+  ```
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ```
++ 进入 `vim` , 执行
+  ```
+  PlugInstall
+  ```
++ 如果需要使用 *neovim*，可以将 *neovim* 的配置文件夹软链接到此文件夹
+  ```
+  ln -s ~/.vim ~/.config/nvim
+  ```
+
+### Config
 
 + `vimrc` 配置入口文件，用于加载插件和其他模块中的配置
 + `basic.vim` 基础配置
@@ -18,5 +37,7 @@
 
 ### ChangeLog
 
++ *2018-7-20* 舍弃了主目录下的`.vimrc`文件，将配置移动到`.vim`文件夹中,便于版本管理。
++ *2018-11-20* 尝试同时兼容vim 和 nvim
 + *2019-4-15* 弃用 `ag.vim`, 使用 `ctrlsf`
 + *2019-5-29* 弃用 `YCM`,全面拥抱 `CoC.nvim`(为了`language server`)
