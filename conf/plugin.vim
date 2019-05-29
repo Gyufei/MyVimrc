@@ -35,26 +35,6 @@
   call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
 " }}}
 
-" 代码片段插件 UltiSnips {{{
-  let g:UltiSnipsExpandTrigger="<c-x>"
-  let g:UltiSnipsJumpForwardTrigger="<c-x>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-  " 不遍历查询snip文件，直接去此目录获取
-  let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-" }}}
-
-" Zen-coding　插件 emmet-vim {{{
-  let g:user_emmet_mode='iv'            " 在i 和 v 模式下启用
-  let g:user_emmet_leader_key='<tab>'    " 设置快捷键为 tab,
-  let g:user_emmet_settings = 0
-  let g:user_emmet_install_global = 0
-
-  augroup emmet
-    autocmd!
-    autocmd FileType html,css,vue EmmetInstall
-  augroup END
-" }}}
-
 " 文件查找插件 CtrlP {{{
   let g:ctrlp_working_path_mode = 'ra'
   let g:ctrlp_custom_ignore = {
@@ -204,3 +184,16 @@ let g:indentLine_enabled = 0
 let g:indentLine_setColors = 0
 nnoremap <Leader>lt :IndentLinesToggle<CR>
 ""}}}
+
+" Zen-coding　插件 emmet-vim {{{
+  let g:user_emmet_mode='iv'            " 在i 和 v 模式下启用
+  let g:user_emmet_leader_key='<tab>'    " 设置快捷键为 tab,
+  let g:user_emmet_settings = 0
+  let g:user_emmet_install_global = 0
+
+  augroup emmet
+    autocmd!
+    autocmd FileType html,css,vue EmmetInstall
+  augroup END
+" }}}
+

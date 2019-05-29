@@ -16,7 +16,6 @@ Plug 'mxw/vim-jsx'
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'SirVer/ultisnips'
 Plug 'mattn/emmet-vim'
-Plug 'Valloric/YouCompleteMe'
 
 " 语法检查
 Plug 'w0rp/ale'
@@ -50,6 +49,7 @@ let s:MyVimConfigFiles = [
     \'ycm.vim',
     \'ale.vim',
     \'plugin.vim',
+    \'justInVim.vim',
     \'airline.vim',
     \'ft.vim'
     \]

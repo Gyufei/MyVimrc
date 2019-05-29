@@ -1,4 +1,9 @@
 {
-  "coc.preferences.minTriggerInputLength": 2,
-  "coc.preferences.diagnostic.displayByAle": false
+  "suggest.minTriggerInputLength": 2,
+  "diagnostic.enable": false,
+  "snippets.extends": {
+    "vue": ["javascript"],
+    "typescript": ["javascript"]
+  },
+  "snippets.snipmate.enable": false
 }

@@ -14,9 +14,7 @@ Plug 'mxw/vim-jsx'
 
 " 补全和代码片段
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'SirVer/ultisnips'
 Plug 'mattn/emmet-vim'
-" Plug 'Valloric/YouCompleteMe'
 
 " 语法检查
 Plug 'w0rp/ale'
@@ -47,9 +45,9 @@ let s:MyVimConfigFiles = [
     \'term.vim',
     \'keymap.vim', 
     \'gui.vim', 
-    \'coc.vim',
     \'ale.vim',
     \'plugin.vim',
+    \'justInNvim.vim',
     \'airline.vim',
     \'ft.vim'
     \]
