@@ -54,8 +54,8 @@ let s:MyVimConfigFiles = [
     \'gui.vim', 
     \'ale.vim',
     \'plugin.vim',
+    \'statusline.vim',
     \'completion.vim',
-    \'airline.vim',
     \'ft.vim'
     \]
 

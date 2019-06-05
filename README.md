@@ -30,7 +30,7 @@
 + `keymap.vim` 自定义快捷键配置
 + `plugin.vim` 各插件的配置(一些配置项较多的插件可以视情况单独再分为一个模块)
 + `ale.vim`    语法检查 ALE 插件的配置
-+ `airline.vim` 状态条vim-airline 插件的配置
++ `statusline.vim` 状态栏配置
 + `ft.vim` 用于针对各种格式文件的专门配置
 + `term.vim` 用于支持vim内命令行的配置
 + `completion.vim` 补全设置
@@ -41,3 +41,4 @@
 + *2018-11-20* 尝试同时兼容vim 和 nvim
 + *2019-4-15* 弃用 `ag.vim`, 使用 `ctrlsf`
 + *2019-5-29* 弃用 `YCM`,全面拥抱 `CoC.nvim`(为了`language server`)
++ *2019-6-5*  替换 状态栏插件 `airline.vim` 为 `lightline.vim`
