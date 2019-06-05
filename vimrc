@@ -28,11 +28,9 @@ Plug 'w0rp/ale'
 " 界面美化和功能增强
 Plug 'luochen1990/rainbow'
 Plug 'morhetz/gruvbox'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
+Plug 'maximbaz/lightline-ale'
 
 Plug 'Valloric/MatchTagAlways'
 Plug 'jiangmiao/auto-pairs'

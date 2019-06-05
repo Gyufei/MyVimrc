@@ -1,42 +1,61 @@
 let g:lightline = {}
 let g:lightline.colorscheme = 'wombat'
 let g:lightline.active = {
-  \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'modified' ], ['ctrlpmark'] ],
-  \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \  'left': [
+  \            [ 'mode', 'paste' ],
+  \            [ 'fugitive', 'filename', 'modified' ],
+  \            ['ctrlpmark']
+  \          ],
+  \  'right': [
+  \            [ 'lineinfo' ],
+  \            ['percent'],
+  \            [ 'fileformat', 'fileencoding', 'filetype' ],
+  \            [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]
+  \           ]
   \ } 
 let g:lightline.component = {
-  \   'lineinfo': '⭡ %3l:%-2v',
+  \  'lineinfo': '⭡ %3l:%-2v',
   \}
 let g:lightline.component_function = {
-  \   'mode': 'LightlineMode',
-  \   'filename': 'LightlineFilename',
-  \   'readonly': 'LightlineReadonly',
-  \   'fugitive': 'LightlineFugitive',
-  \   'fileformat': 'LightlineFileformat',
-  \   'fileencoding': 'LightlineFileencoding',
-  \   'filetype': 'LightlineFiletype',
-  \   'ctrlpmark': 'CtrlPMark'
+  \  'mode': 'LightlineMode',
+  \  'filename': 'LightlineFilename',
+  \  'readonly': 'LightlineReadonly',
+  \  'fugitive': 'LightlineFugitive',
+  \  'fileformat': 'LightlineFileformat',
+  \  'fileencoding': 'LightlineFileencoding',
+  \  'filetype': 'LightlineFiletype',
+  \  'ctrlpmark': 'CtrlPMark'
   \ }
 let g:lightline.tabline = {
   \    'left': [ [ 'buffers' ] ],
   \    'right': [ [ 'close' ] ] 
   \}
 let g:lightline.component_expand = {
-  \    'buffers': 'lightline#bufferline#buffers'
-  \}
-let g:lightline.component_type = { 'buffers': 'tabsel' }
+  \  'buffers': 'lightline#bufferline#buffers',
+  \  'linter_checking': 'lightline#ale#checking',
+  \  'linter_warnings': 'lightline#ale#warnings',
+  \  'linter_errors': 'lightline#ale#errors',
+  \  'linter_ok': 'lightline#ale#ok'
+  \ }
+let g:lightline.component_type = { 
+  \  'buffers': 'tabsel',
+  \  'linter_checking': 'left',
+  \  'linter_warnings': 'warning',
+  \  'linter_errors': 'error',
+  \  'linter_ok': 'left'
+  \ }
 let g:lightline.mode_map = {
-  \    'n'  : 'N',
-  \    'i'  : 'I',
-  \    'R'  : 'R',
-  \    'v'  : 'V',
-  \    'V' : 'V-L',
-  \    "\<C-v>": 'V-B',
-  \    'c'  : 'C',
-  \    's'  : 'S',
-  \    'S'  : 'S',
-  \    '\<C-s>' : 'S-B',
-  \    't'  : 'Term',
+  \  'n'  : 'N',
+  \  'i'  : 'I',
+  \  'R'  : 'R',
+  \  'v'  : 'V',
+  \  'V' : 'V-L',
+  \  "\<C-v>": 'V-B',
+  \  'c'  : 'C',
+  \  's'  : 'S',
+  \  'S'  : 'S',
+  \  '\<C-s>' : 'S-B',
+  \  't'  : 'Term',
   \ }
 let g:lightline.separator = { 'left': '⮀', 'right': '⮂' }
 let g:lightline.subseparator = { 'left': '⮁', 'right': '⮃' } 
