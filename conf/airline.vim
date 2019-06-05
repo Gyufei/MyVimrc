@@ -1,83 +1,156 @@
-" 状态栏插件 airline {{{
-    let g:airline_powerline_fonts = 1   
-    let g:airline_theme='gruvbox'
-    
-    " tabline功能
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#buffer_nr_show = 1
-    " tab前显示tab序号
-    let g:airline#extensions#tabline#tab_nr_type = 1 
-    let g:airline#extensions#tabline#buffers_label = 'bufs'
+let g:lightline = {}
+let g:lightline.colorscheme = 'wombat'
+let g:lightline.active = {
+  \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'modified' ], ['ctrlpmark'] ],
+  \   'right': [ [ 'lineinfo' ], ['percent'], [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \ } 
+let g:lightline.component = {
+  \   'lineinfo': '⭡ %3l:%-2v',
+  \}
+let g:lightline.component_function = {
+  \   'mode': 'LightlineMode',
+  \   'filename': 'LightlineFilename',
+  \   'readonly': 'LightlineReadonly',
+  \   'fugitive': 'LightlineFugitive',
+  \   'fileformat': 'LightlineFileformat',
+  \   'fileencoding': 'LightlineFileencoding',
+  \   'filetype': 'LightlineFiletype',
+  \   'ctrlpmark': 'CtrlPMark'
+  \ }
+let g:lightline.tabline = {
+  \    'left': [ [ 'buffers' ] ],
+  \    'right': [ [ 'close' ] ] 
+  \}
+let g:lightline.component_expand = {
+  \    'buffers': 'lightline#bufferline#buffers'
+  \}
+let g:lightline.component_type = { 'buffers': 'tabsel' }
+let g:lightline.mode_map = {
+  \    'n'  : 'N',
+  \    'i'  : 'I',
+  \    'R'  : 'R',
+  \    'v'  : 'V',
+  \    'V' : 'V-L',
+  \    "\<C-v>": 'V-B',
+  \    'c'  : 'C',
+  \    's'  : 'S',
+  \    'S'  : 'S',
+  \    '\<C-s>' : 'S-B',
+  \    't'  : 'Term',
+  \ }
+let g:lightline.separator = { 'left': '⮀', 'right': '⮂' }
+let g:lightline.subseparator = { 'left': '⮁', 'right': '⮃' } 
 
-    " buffer显示在前面
-    let g:airline#extensions#tabline#buf_label_first = 1
+function! LightlineFilename()
+  let fname = expand('%:t')
+  return fname == 'ControlP' && has_key(g:lightline, 'ctrlp_item') ? g:lightline.ctrlp_item :
+        \ fname == '__Tagbar__' ? g:lightline.fname :
+        \ fname =~ '__Gundo\|NERD_tree' ? '' :
+        \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \ &ft == 'unite' ? unite#get_status_string() :
+        \ &ft == 'vimshell' ? vimshell#get_status_string() :
+        \ ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+        \ ('' != fname ? fname : '[No Name]') .
+        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+endfunction
 
-    " wordcount
-    let g:airline#extensions#wordcount#formatter#default#fmt = '%s W'
+function! LightlineReadonly()
+  return &ft !~? 'help' && &readonly ? 'RO' : ''
+endfunction
 
-    "不显示空格错误提示
-    let g:airline#extensions#whitespace#enabled = 0
+function! LightlineModified()
+  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
 
-    " 当文件为UTF-8时，不显示文件格式
-    let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-
-    if !exists('g:airline_symbols')
-      let g:airline_symbols = {}
+function! LightlineFugitive()
+  try
+    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
+      let mark = '⭠'  " edit here for cool mark
+      let branch = fugitive#head()
+      return branch !=# '' ? mark.branch : ''
     endif
-    " powerline symbols
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.linenr = '☰'
-    let g:airline_symbols.maxlinenr = ''
+  catch
+  endtry
+  return ''
+endfunction
 
-    " ale
-    let g:airline#extensions#ale#enabled = 1
-    let airline#extensions#ale#error_symbol = 'E:'
-    let airline#extensions#ale#warning_symbol = 'W:'
-    let airline#extensions#ale#show_line_numbers = 1
-    let airline#extensions#ale#open_lnum_symbol = '(L'
-    let airline#extensions#ale#close_lnum_symbol = ')'
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
 
-    " gitGutter
-    let g:airline#extensions#hunks#enabled = 1
-    let g:airline#extensions#hunks#non_zero_only = 0
-    let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+function! LightlineFileencoding()
+  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+endfunction
 
-    let g:airline_mode_map = {
-        \ '__' : '-',
-        \ 'n'  : 'N',
-        \ 'i'  : 'I',
-        \ 'R'  : 'R',
-        \ 'c'  : 'C',
-        \ 'v'  : 'V',
-        \ 'V'  : 'V',
-        \ '' : 'V',
-        \ 's'  : 'S',
-        \ 'S'  : 'S',
-        \ '' : 'S',
-        \ 't'  : 'T',
-        \ }
+function! LightlineFiletype()
+  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+endfunction
 
-    " layout
-    let g:airline#extensions#default#layout = [
-        \ [ 'a', 'b', 'c' ],
-        \ [ 'x', 'y', 'error', 'warning', 'z']
-        \ ]
+function! LightlineMode()
+  let fname = expand('%:t')
+  return fname == '__Tagbar__' ? 'Tagbar' :
+    \ fname == 'ControlP' ? 'CtrlP' :
+    \ fname == '__Gundo__' ? 'Gundo' :
+    \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
+    \ fname =~ 'NERD_tree' ? 'NERDTree' :
+    \ &ft == 'unite' ? 'Unite' :
+    \ &ft == 'vimfiler' ? 'VimFiler' :
+    \ &ft == 'vimshell' ? 'VimShell' :
+    \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
 
-    let g:airline#extensions#tabline#buffer_idx_mode = 1
-    nmap <leader>1 <Plug>AirlineSelectTab1
-    nmap <leader>2 <Plug>AirlineSelectTab2
-    nmap <leader>3 <Plug>AirlineSelectTab3
-    nmap <leader>4 <Plug>AirlineSelectTab4
-    nmap <leader>5 <Plug>AirlineSelectTab5
-    nmap <leader>6 <Plug>AirlineSelectTab6
-    nmap <leader>7 <Plug>AirlineSelectTab7
-    nmap <leader>8 <Plug>AirlineSelectTab8
-    nmap <leader>9 <Plug>AirlineSelectTab9
-    nmap <leader>[ <Plug>AirlineSelectPrevTab
-    nmap <leader>] <Plug>AirlineSelectNextTab
-" }}}
+function! CtrlPMark()
+  if expand('%:t') =~ 'ControlP' && has_key(g:lightline, 'ctrlp_item')
+    call lightline#link('iR'[g:lightline.ctrlp_regex])
+    return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
+      \ , g:lightline.ctrlp_next], 0)
+  else
+    return ''
+  endif
+endfunction
+
+let g:ctrlp_status_func = {
+  \ 'main': 'CtrlPStatusFunc_1',
+  \ 'prog': 'CtrlPStatusFunc_2',
+  \ }
+
+function! CtrlPStatusFunc_1(focus, byfname, regex, prev, item, next, marked)
+  let g:lightline.ctrlp_regex = a:regex
+  let g:lightline.ctrlp_prev = a:prev
+  let g:lightline.ctrlp_item = a:item
+  let g:lightline.ctrlp_next = a:next
+  return lightline#statusline(0)
+endfunction
+
+function! CtrlPStatusFunc_2(str)
+  return lightline#statusline(0)
+endfunction
+
+let g:tagbar_status_func = 'TagbarStatusFunc'
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+  let g:lightline.fname = a:fname
+  return lightline#statusline(0)
+endfunction
+
+set showtabline=2
+let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#unicode_symbols = 1
+let g:lightline#bufferline#number_map = {
+\ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+\ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
+
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
+
+let g:unite_force_overwrite_statusline = 0
+let g:vimfiler_force_overwrite_statusline = 0
+let g:vimshell_force_overwrite_statusline = 0
+
