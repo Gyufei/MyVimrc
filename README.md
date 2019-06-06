@@ -54,4 +54,5 @@
   + 需要设置命令行全局变量来设置 `fzf` 的搜索行为
   ```
   export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist} --type file --hidden"
+  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
   ```
