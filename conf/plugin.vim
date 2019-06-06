@@ -35,14 +35,52 @@
   call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
 " }}}
 
-" 文件查找插件 CtrlP {{{
-  let g:ctrlp_working_path_mode = 'ra'
-  let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|lock)$'
-  \ }
-  set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*/Library/*    " MacOSX/Linux
-" }}}
+" 文件查找插件 fzf {{{
+  let g:fzf_nvim_statusline = 0 " disable statusline overwriting
+
+  let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+  let g:fzf_buffers_jump = 1
+  let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+  let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+  function! FZFOpen(command_str)
+    if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+      exe "normal! \<c-w>\<c-w>"
+    endif
+    exe 'normal! ' . a:command_str . "\<cr>"
+  endfunction
+
+  function! SearchWordWithAg()
+    execute 'Ag' expand('<cword>')
+  endfunction
+
+  function! SearchVisualSelectionWithAg() range
+    let old_reg = getreg('"')
+    let old_regtype = getregtype('"')
+    let old_clipboard = &clipboard
+    set clipboard&
+    normal! ""gvy
+    let selection = getreg('"')
+    call setreg('"', old_reg, old_regtype)
+    let &clipboard = old_clipboard
+    execute 'Ag' selection
+  endfunction
+
+  nnoremap <silent> K :call SearchWordWithAg()<CR>
+  vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+
+  nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
+  nnoremap <silent> <leader>fw :call FZFOpen(':Ag')<CR>
+  nnoremap <silent> <leader>fl :call FZFOpen(':BLines')<CR>
+  nnoremap <silent> <leader>fb :call FZFOpen(':Buffers')<CR>
+
+  nnoremap <silent> <leader>gc :call FZFOpen(':Commits')<CR>
+  nnoremap <silent> <leader>gb :call FZFOpen(':BCommits')<CR>
+  " }}}
 
 " 彩虹括号插件 {{{
   let g:rainbow_active = 1 "0 if you want to enable it later via " :RainbowToggle

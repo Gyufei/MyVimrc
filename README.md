@@ -37,9 +37,21 @@
 
 ### ChangeLog
 
-+ *2018-7-20* 舍弃了主目录下的`.vimrc`文件，将配置移动到`.vim`文件夹中,便于版本管理。
-+ *2018-11-20* 尝试同时兼容vim 和 nvim
-+ *2019-4-15* 弃用 `ag.vim`, 使用 `ctrlsf`
-+ *2019-5-29* 弃用 `YCM`,全面拥抱 `CoC.nvim`(为了`language server`)
-+ *2019-6-5*  替换 状态栏插件 `airline.vim` 为 `lightline.vim`
-+ *2019-6-6*  替换 `git` 相关插件 `vim-fugitive` 和 `vim-signify` 为 `coc-git`
++ *2018-7-20* 
+  舍弃了主目录下的`.vimrc`文件，将配置移动到`.vim`文件夹中,便于版本管理。
++ *2018-11-20* 
+  尝试同时兼容vim 和 nvim
++ *2019-4-15* 
+  弃用 `ag.vim`, 使用 `ctrlsf`
++ *2019-5-29* 
+  弃用 `YCM`,全面拥抱 `CoC.nvim`(为了`language server`)
++ *2019-6-5*  
+  替换 状态栏插件 `airline.vim` 为 `lightline.vim`
++ *2019-6-6*  
+  替换 `git` 相关插件 `vim-fugitive` 和 `vim-signify` 为 `coc-git`
+  替换全局搜索插件 `ctrlp` 为 `fzf.vim`:
+  + 需要安装 `fzf` 和 `fd`
+  + 需要设置命令行全局变量来设置 `fzf` 的搜索行为
+  ```
+  export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist} --type file --hidden"
+  ```

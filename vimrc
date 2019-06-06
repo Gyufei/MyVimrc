@@ -2,7 +2,9 @@ call plug#begin('~/.vim/bundle')
 " 文件查找,目录,标签支持
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 
 " 语法支持
