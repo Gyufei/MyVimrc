@@ -129,14 +129,6 @@
   \ }
 " }}}
 
-" 文件修改状态插件 signify {{{
-  let g:signify_vcs_list = ['git']  "变更检测工具支持
-  " 跳转修改标记
-  nmap <leader>gn <plug>(signify-next-hunk)
-  nmap <leader>gp <plug>(signify-prev-hunk)
-  nnoremap <leader>gd :SignifyDiff<CR>
-" }}}
-
 " 移动插件easymotion {{{
   let g:EasyMotion_smartcase = 1  " 忽略大小写
 " }}}
@@ -197,3 +189,13 @@ nnoremap <Leader>lt :IndentLinesToggle<CR>
   augroup END
 " }}}
 
+" coc-git 插件 {{{
+    " navigate chunks of current buffer
+  nmap [g <Plug>(coc-git-prevchunk)
+  nmap ]g <Plug>(coc-git-nextchunk)
+
+  " git 修改高亮
+  highlight DiffAdd           cterm=bold ctermbg=237 ctermfg=119
+  highlight DiffDelete        cterm=bold ctermbg=237 ctermfg=167
+  highlight DiffChange        cterm=bold ctermbg=237 ctermfg=227
+" }}}

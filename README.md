@@ -42,3 +42,4 @@
 + *2019-4-15* 弃用 `ag.vim`, 使用 `ctrlsf`
 + *2019-5-29* 弃用 `YCM`,全面拥抱 `CoC.nvim`(为了`language server`)
 + *2019-6-5*  替换 状态栏插件 `airline.vim` 为 `lightline.vim`
++ *2019-6-6*  替换 git 相关插件 fugitive.vim 和 signify 为 coc-git

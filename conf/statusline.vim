@@ -20,7 +20,7 @@ let g:lightline.component_function = {
   \  'mode': 'LightlineMode',
   \  'filename': 'LightlineFilename',
   \  'readonly': 'LightlineReadonly',
-  \  'fugitive': 'LightlineFugitive',
+  \  'fugitive': 'LightlineGitBranch',
   \  'fileformat': 'LightlineFileformat',
   \  'fileencoding': 'LightlineFileencoding',
   \  'filetype': 'LightlineFiletype',
@@ -81,12 +81,12 @@ function! LightlineModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
 
-function! LightlineFugitive()
+function! LightlineGitBranch()
   try
-    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler' && exists('*fugitive#head')
-      let mark = '⭠'  " edit here for cool mark
-      let branch = fugitive#head()
-      return branch !=# '' ? mark.branch : ''
+    if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && &ft !~? 'vimfiler'
+      " let mark = '⭠'  " edit here for cool mark
+      let branch = get(g:, 'coc_git_status')
+      return branch !=# '' ? branch : ''
     endif
   catch
   endtry

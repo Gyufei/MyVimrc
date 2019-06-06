@@ -29,16 +29,14 @@
 
   " 格式化
   nmap <Leader>ef <Plug>(ale_fix)
-
-  " 前往上一个错误或警告，
-  nmap <Leader>ep <Plug>(ale_previous_wrap)
-  " 前往下一个错误或警告
-  nmap <Leader>en <Plug>(ale_next_wrap)
-
   "<Leader>ld查看错误或警告的详细信息
   nmap <Leader>ed <Plug>(ale_detail)
-
   "<leader>j跳转到定义
   nmap <Leader>jd <Plug>(ale_go_to_definition)
+  " 前往上一个错误或警告，
+  nmap [e <Plug>(ale_previous_wrap)
+  " 前往下一个错误或警告
+  nmap ]e <Plug>(ale_next_wrap)
+
 "  }}}
 

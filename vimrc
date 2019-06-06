@@ -24,13 +24,13 @@ endif
 " 语法检查
 Plug 'w0rp/ale'
 
-
 " 界面美化和功能增强
-Plug 'luochen1990/rainbow'
-Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
+
+Plug 'luochen1990/rainbow'
+Plug 'morhetz/gruvbox'
 
 Plug 'Valloric/MatchTagAlways'
 Plug 'jiangmiao/auto-pairs'
@@ -39,8 +39,6 @@ Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'easymotion/vim-easymotion'
 
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesToggle' }
 call plug#end()
 
@@ -49,7 +47,7 @@ let s:MyVimConfigFiles = [
     \'basic.vim', 
     \'term.vim',
     \'keymap.vim', 
-    \'gui.vim', 
+    \'display.vim', 
     \'ale.vim',
     \'plugin.vim',
     \'statusline.vim',
