@@ -6,5 +6,5 @@
     "typescript": ["javascript"]
   },
   "snippets.snipmate.enable": false,
-  "git.addGlameToVirtualText": true
+  "git.addGlameToVirtualText": false
 }
