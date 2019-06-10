@@ -70,14 +70,20 @@
     execute 'Ag' selection
   endfunction
 
+  command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%', '?'),
+  \                 <bang>0)
+
   nnoremap <silent> K :call SearchWordWithAg()<CR>
   vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
 
   nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
-  nnoremap <silent> <leader>fw :call FZFOpen(':Ag')<CR>
+  nnoremap <silent> <leader>/ :call FZFOpen(':Ag')<CR>
+
   nnoremap <silent> <leader>fl :call FZFOpen(':BLines')<CR>
   nnoremap <silent> <leader>fb :call FZFOpen(':Buffers')<CR>
-
   nnoremap <silent> <leader>gc :call FZFOpen(':Commits')<CR>
   nnoremap <silent> <leader>gb :call FZFOpen(':BCommits')<CR>
   " }}}
@@ -134,37 +140,6 @@
   noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
   noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
   noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-" }}}
-
-" 全局搜索内容插件 ctrlsf.vim {{{
-  " 是否自动关闭
-  let g:ctrlsf_auto_close = {
-    \ "normal" : 0,
-    \ "compact": 0
-  \ }
-  " 自动聚焦到结果窗口
-  let g:ctrlsf_auto_focus = {
-  \ "at" : "done",
-  \ "duration_less_than": 1000
-  \ }
-  " 忽略文件
-  let g:ctrlsf_ignore_dir = ['bower_components', 'node_modules']
-  " 单行显示
-  let g:ctrlsf_default_view_mode='compact'
-  " 基于vbs项目搜索
-  let g:ctrlsf_default_root='project'
-  " 结果窗口位置
-  let g:ctrlsf_position = 'bottom'
-  " 文件名和结果间的空格数
-   let g:ctrlsf_indent = 2
-
-  " 配置 CtrlSF 命令为快捷键 ge
-  nmap <Leader>/ <Plug>CtrlSFPrompt
-  " 结果窗口中的快捷键
-  let g:ctrlsf_mapping = {
-  \ "next": "<C-n>",
-  \ "prev": "<C-p>",
-  \ }
 " }}}
 
 " 移动插件easymotion {{{

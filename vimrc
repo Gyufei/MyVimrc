@@ -5,7 +5,6 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'dyng/ctrlsf.vim'
 
 " 语法支持
 Plug 'pangloss/vim-javascript'

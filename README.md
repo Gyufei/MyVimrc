@@ -49,7 +49,7 @@
   替换 状态栏插件 `airline.vim` 为 `lightline.vim`
 + *2019-6-6*  
   替换 `git` 相关插件 `vim-fugitive` 和 `vim-signify` 为 `coc-git`
-  替换全局搜索插件 `ctrlp` 为 `fzf.vim`:
+  替换全局搜索插件 `ctrlp`  和 `ctrlsf` 为 `fzf.vim`:
   + 需要安装 `fzf` 和 `fd`
   + 需要设置命令行全局变量来设置 `fzf` 的搜索行为
   ```
