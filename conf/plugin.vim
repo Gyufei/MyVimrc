@@ -54,11 +54,18 @@
     exe 'normal! ' . a:command_str . "\<cr>"
   endfunction
 
-  function! SearchWordWithAg()
-    execute 'Ag' expand('<cword>')
+  command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
+  \   <bang>0)
+
+  function! SearchWord()
+    execute 'Rg' expand('<cword>')
   endfunction
 
-  function! SearchVisualSelectionWithAg() range
+  function! SearchVisualSelection() range
     let old_reg = getreg('"')
     let old_regtype = getregtype('"')
     let old_clipboard = &clipboard
@@ -67,20 +74,14 @@
     let selection = getreg('"')
     call setreg('"', old_reg, old_regtype)
     let &clipboard = old_clipboard
-    execute 'Ag' selection
+    execute 'Rg' selection
   endfunction
 
-  command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
-  \                         : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%', '?'),
-  \                 <bang>0)
-
-  nnoremap <silent> K :call SearchWordWithAg()<CR>
-  vnoremap <silent> K :call SearchVisualSelectionWithAg()<CR>
+  nnoremap <silent> K :call SearchWord()<CR>
+  vnoremap <silent> K :call SearchVisualSelection()<CR>
 
   nnoremap <silent> <C-p> :call FZFOpen(':Files')<CR>
-  nnoremap <silent> <leader>/ :call FZFOpen(':Ag')<CR>
+  nnoremap <silent> <leader>/ :call FZFOpen(':Rg')<CR>
 
   nnoremap <silent> <leader>fl :call FZFOpen(':BLines')<CR>
   nnoremap <silent> <leader>fb :call FZFOpen(':Buffers')<CR>

@@ -50,9 +50,10 @@
 + *2019-6-6*  
   替换 `git` 相关插件 `vim-fugitive` 和 `vim-signify` 为 `coc-git`
   替换全局搜索插件 `ctrlp`  和 `ctrlsf` 为 `fzf.vim`:
-  + 需要安装 `fzf` 和 `fd`
+  + 需要安装 `fzf` 和 
+  + 需要安装 `fd` 和 `Rg(ripgrep)`, 可选安装 `highlight` 从而高亮预览结果, *MAC* 下均可使用 `homebrew` 安装
   + 需要设置命令行全局变量来设置 `fzf` 的搜索行为
-  ```
-  export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist} --type file --hidden"
-  export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
-  ```
+    ```
+    export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist} --type file --hidden"
+    export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
+    ```
