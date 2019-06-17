@@ -16,6 +16,7 @@ Plug 'mxw/vim-jsx'
 " 补全和代码片段
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
+
 if has('nvim')
   Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 else
@@ -31,7 +32,6 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'
 
 Plug 'luochen1990/rainbow'
-Plug 'morhetz/gruvbox'
 
 Plug 'Valloric/MatchTagAlways'
 Plug 'jiangmiao/auto-pairs'

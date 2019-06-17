@@ -213,3 +213,11 @@ nnoremap <Leader>lt :IndentLinesToggle<CR>
   highlight DiffDelete        cterm=bold ctermbg=237 ctermfg=167
   highlight DiffChange        cterm=bold ctermbg=237 ctermfg=227
 " }}}
+"
+" 配色 gruvbox 9 {{{
+    let g:gruvbox_filetype_hi_groups = 0
+    let g:gruvbox_italic = 1
+    let g:gruvbox_italicize_strings = 1
+    let g:gruvbox_plugin_hi_groups = 1
+    let g:gruvbox_transp_bg = 1
+" }}}

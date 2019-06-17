@@ -56,5 +56,6 @@ set selection=exclusive
 set selectmode=mouse,key
 set gcr=a:block-blinkon0    " 禁止光标闪烁
 
-colorscheme gruvbox         " 颜色主题
+set t_Co=256
 set bg=dark                 " 暗色主题
+colorscheme gruvbox8         " 颜色主题
