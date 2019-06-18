@@ -175,7 +175,7 @@ nmap <Leader>8 <Plug>lightline#bufferline#go(8)
 nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
-" statusLine 配色 {{{{
+" statusLine gruvbox 主题 {{{{
 let s:red     = [ '#cc241d', 124 ]
 let s:red1     = [ '#9d0006', 88 ]
 let s:green   = [ '#98971a', 106 ]
@@ -207,28 +207,33 @@ let s:p = {'normal':{}, 'inactive':{}, 'insert':{}, 'replace':{}, 'visual':{}, '
   let s:p.normal.left = [ [ s:bg0, s:green, 'bold' ], [ s:fg4, s:bg3] ,[s:fg3,s:bg4],[s:blue1,s:bg_icon]]
   let s:p.normal.right = [ [ s:bg0, s:green ], [ s:bg0, s:fg4 ],[ s:bg0, s:bg4 ] ,[s:red,s:bg1],[s:blue1,s:bg1],[s:orange,s:bg1]]
   let s:p.normal.middle = [ [ s:fg4, s:bg1 ] ]
-  let s:p.inactive.right = [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
-  let s:p.inactive.left =  [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
-  let s:p.inactive.middle = [ [ s:bg4, s:bg1 ] ]
+  let s:p.normal.error = [ [ s:bg0, s:orange ] ]
+  let s:p.normal.warning = [ [ s:bg2, s:yellow ] ]
+
   let s:p.insert.left = [ [ s:bg0, s:blue, 'bold'], [ s:fg4, s:bg3],[ s:fg3, s:bg4] ,[s:blue1,s:bg_icon]]
   let s:p.insert.right = [ [ s:bg0, s:blue ], [ s:bg0, s:fg4 ],[ s:bg0, s:bg4 ] ,[s:red,s:bg1],[s:blue1,s:bg1],[s:orange,s:bg1]]
   let s:p.insert.middle = [ [ s:fg4, s:bg1 ] ]
-  let s:p.terminal.left = [ [ s:bg0, s:green, 'bold' ], [ s:fg1, s:bg2 ] ]
-  let s:p.terminal.right = [ [ s:bg0, s:green ], [ s:fg1, s:bg2 ] ]
-  let s:p.terminal.middle = [ [ s:fg4, s:bg2 ] ]
+
   let s:p.replace.left = [ [ s:bg0, s:aqua, 'bold' ], [ s:fg1, s:bg0 ] ,[ s:fg3, s:bg4] ,[s:blue1,s:bg_icon]]
   let s:p.replace.right = [ [ s:bg0, s:aqua ], [ s:bg0, s:fg4 ],[ s:bg0, s:bg4 ] ,[s:red,s:bg1],[s:blue1,s:bg1],[s:orange,s:bg1]]
   let s:p.replace.middle = [ [ s:fg4, s:bg1 ] ]
+
   let s:p.visual.left = [ [ s:bg0, s:orange, 'bold' ], [ s:fg1, s:bg0 ],[s:fg3,s:bg4],[s:blue1,s:bg_icon]]
   let s:p.visual.right = [ [ s:bg0, s:orange ], [ s:bg0, s:fg4 ],[ s:bg0, s:bg4 ] ,[s:red,s:bg1],[s:blue1,s:bg1],[s:orange,s:bg1]]
-
   let s:p.visual.middle = [ [ s:fg4, s:bg1 ] ]
+
+  let s:p.inactive.right = [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
+  let s:p.inactive.left =  [ [ s:bg4, s:bg1 ], [ s:bg4, s:bg1 ] ]
+  let s:p.inactive.middle = [ [ s:bg4, s:bg1 ] ]
+
+  let s:p.terminal.left = [ [ s:bg0, s:green, 'bold' ], [ s:fg1, s:bg2 ] ]
+  let s:p.terminal.right = [ [ s:bg0, s:green ], [ s:fg1, s:bg2 ] ]
+  let s:p.terminal.middle = [ [ s:fg4, s:bg2 ] ]
+
   let s:p.tabline.left = [ [ s:fg4, s:bg1 ] ]
   let s:p.tabline.tabsel = [ [ s:bg0, s:green ] ]
   let s:p.tabline.middle = [ [ s:bg0, s:bg0 ] ]
   let s:p.tabline.right = [ [ s:bg0, s:orange ] ]
-  let s:p.normal.error = [ [ s:bg0, s:orange ] ]
-  let s:p.normal.warning = [ [ s:bg2, s:yellow ] ]
 
   let g:lightline#colorscheme#gruvbox8#palette = lightline#colorscheme#flatten(s:p)
 " }}}}
