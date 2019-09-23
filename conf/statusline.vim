@@ -14,7 +14,7 @@ let g:lightline.active = {
   \           ]
   \ } 
 let g:lightline.component = {
-  \  'lineinfo': '⭡ %3l:%-2v',
+  \  'lineinfo': ' %3l:%-2v',
   \}
 let g:lightline.component_function = {
   \  'mode': 'LightlineMode',
@@ -57,8 +57,8 @@ let g:lightline.mode_map = {
   \  '\<C-s>' : 'S-B',
   \  't'  : 'Term',
   \ }
-let g:lightline.separator = { 'left': '⮀', 'right': '⮂' }
-let g:lightline.subseparator = { 'left': '⮁', 'right': '⮃' } 
+let g:lightline.separator = { 'left': "\ue0b0", 'right': "\ue0b2"}
+let g:lightline.subseparator =  { 'left': "\ue0b1", 'right': "\ue0b3"}
 
 function! LightlineFilename()
   let fname = expand('%:t')

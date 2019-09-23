@@ -8,7 +8,7 @@ Plug 'junegunn/fzf.vim'
 
 " 语法支持
 Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'mxw/vim-jsx'

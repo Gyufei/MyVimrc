@@ -25,6 +25,9 @@ augroup END
         return !col || getline('.')[col - 1]  =~# '\s'
       endfunction
 
+      nmap gd <Plug>(coc-definition)
+      nmap gr <Plug>(coc-references)
+
       let g:coc_snippet_next = '<C-x>'
       let g:coc_global_extensions = [
         \"coc-html",
@@ -32,6 +35,7 @@ augroup END
         \"coc-json",
         \"coc-emmet",
         \"coc-vetur",
+        \"coc-angular",
         \"coc-tsserver",
         \"coc-snippets"
         \]

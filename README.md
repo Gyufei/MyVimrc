@@ -57,3 +57,5 @@
     export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist} --type file --hidden"
     export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
     ```
++ *2019-9-18*
+  更新 typescript 语法高亮插件(typescript.vim -> yats.vim)
