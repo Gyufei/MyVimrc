@@ -16,12 +16,7 @@ Plug 'mxw/vim-jsx'
 " 补全和代码片段
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
-
-if has('nvim')
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-else
-  Plug 'SirVer/ultisnips'
-endif
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " 语法检查
 Plug 'w0rp/ale'

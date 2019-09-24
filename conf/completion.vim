@@ -14,6 +14,7 @@ augroup compmau
   autocmd CompleteDone * if pumvisible() == 0 | pclose | endif	 " 离开插入模式后自动关闭预览窗口
 augroup END
 
+" coc.nvim
 inoremap <silent><expr> <C-x>
     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
     \ coc#refresh()

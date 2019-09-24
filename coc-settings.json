@@ -3,10 +3,12 @@
   "suggest.minTriggerInputLength": 2,
 
   "diagnostic.enable": false,
+
   "snippets.extends": {
     "vue": ["javascript"],
     "typescript": ["javascript"]
   },
   "snippets.snipmate.enable": false,
+
   "git.realtimeGutters": false
 }
