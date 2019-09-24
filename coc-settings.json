@@ -7,5 +7,6 @@
     "vue": ["javascript"],
     "typescript": ["javascript"]
   },
-  "snippets.snipmate.enable": false
+  "snippets.snipmate.enable": false,
+  "git.realtimeGutters": false
 }

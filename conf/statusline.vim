@@ -93,17 +93,18 @@ function! LightlineGitBranch()
   return ''
 endfunction
 
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
 function! LightlineFileencoding()
   return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
 endfunction
 
 function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
+
+function! LightlineFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+
 
 function! LightlineMode()
   let fname = expand('%:t')

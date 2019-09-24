@@ -203,13 +203,3 @@ nnoremap <Leader>lt :IndentLinesToggle<CR>
   augroup END
 " }}}
 
-" coc-git 插件 {{{
-    " navigate chunks of current buffer
-  nmap [g <Plug>(coc-git-prevchunk)
-  nmap ]g <Plug>(coc-git-nextchunk)
-
-  " git 修改高亮
-  highlight DiffAdd           cterm=bold ctermbg=237 ctermfg=119
-  highlight DiffDelete        cterm=bold ctermbg=237 ctermfg=167
-  highlight DiffChange        cterm=bold ctermbg=237 ctermfg=227
-" }}}

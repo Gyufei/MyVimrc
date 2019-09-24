@@ -39,6 +39,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'easymotion/vim-easymotion'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'Yggdroot/indentLine', { 'on': 'IndentLinesToggle' }
 call plug#end()

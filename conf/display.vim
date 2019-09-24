@@ -6,7 +6,7 @@ if s:is_gui
   if s:is_linux
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 12 " linux 配置
   elseif s:is_mac
-    set guifont=Noto_Mono_for_Powerline:h13 "mac&win 字体配置
+    set guifont=Noto_Mono_Nerd_Font_Complete_Mono:h13 "mac&win 字体配置
   endif
 endif
 
