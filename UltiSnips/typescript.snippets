@@ -1,1 +1,46 @@
 extends javascript
+
+# Angular
+snippet ng-component 
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: '$1',
+  templateUrl: '${2:#:name}.component.html'
+})
+export class ${1:#:ComponentName}Component implements OnInit {
+  constructor() { }
+
+  ngOnInit() { }
+  ${0}
+}
+endsnippet
+
+snippet ng-service
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class ${1:#:ServiceName}Service {
+  ${0}
+  constructor() { }
+
+}
+endsnippet
+
+snippet ng-pipe
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: '${name}'
+})
+
+export class ${1:#:PipeName}Pipe implements PipeTransform {
+  transform(value: any, args: any[]): any {
+	  ${0}
+  }
+}
+endsnippet
+
+snippet ng-route-path
+  { path: '/${1:#:path}', component: ${2:#:Component} }${0}
+endsnippet
