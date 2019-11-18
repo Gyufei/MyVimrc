@@ -1,27 +1,27 @@
 call plug#begin('~/.vim/bundle')
-" æ–‡ä»¶æŸ¥æ‰¾,ç›®å½•,æ ‡ç­¾æ”¯æŒ
+" ÎÄ¼ş²éÕÒ,Ä¿Â¼,±êÇ©Ö§³Ö
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" è¯­æ³•æ”¯æŒ
+" Óï·¨Ö§³Ö
 Plug 'pangloss/vim-javascript'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'mxw/vim-jsx'
 
-" è¡¥å…¨å’Œä»£ç ç‰‡æ®µ
+" ²¹È«ºÍ´úÂëÆ¬¶Î
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
-" è¯­æ³•æ£€æŸ¥
+" Óï·¨¼ì²é
 Plug 'w0rp/ale'
 
-" ç•Œé¢ç¾åŒ–å’ŒåŠŸèƒ½å¢å¼º
+" ½çÃæÃÀ»¯ºÍ¹¦ÄÜÔöÇ¿
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'maximbaz/lightline-ale'

@@ -1,13 +1,18 @@
-let s:is_mac=has("mac")
+﻿let s:is_mac=has("mac")
 let s:is_linux=has("unix") && !has("macunix") && !has("win32unix")
+let s:is_win=has("win32") || has("win64") || has("win95") || has("win16")
 let s:is_gui=has("gui_running")
 
 if s:is_gui
   if s:is_linux
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 12 " linux 配置
   elseif s:is_mac
-    set guifont=Noto_Mono_Nerd_Font_Complete_Mono:h13 "mac&win 字体配置
+    set guifont=Noto_Mono_Nerd_Font_Complete_Mono:h13 "mac 字体配置
   endif
+endif
+
+if s:is_win
+   set guifont=NotoMono\ NF:h11
 endif
 
 if s:is_gui
