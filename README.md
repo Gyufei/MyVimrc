@@ -26,7 +26,7 @@
 
 + `vimrc` 配置入口文件，用于加载插件和其他模块中的配置
 + `basic.vim` 基础配置
-+ `gui.vim`   GUI中的一些配置项
++ `display.vim`   外观和展现的一些配置项
 + `keymap.vim` 自定义快捷键配置
 + `plugin.vim` 各插件的配置(一些配置项较多的插件可以视情况单独再分为一个模块)
 + `ale.vim`    语法检查 ALE 插件的配置
@@ -35,8 +35,8 @@
 + `term.vim` 用于支持vim内命令行的配置
 + `completion.vim` 补全设置
 
-### ChangeLog
-
+<details><summary>ChangeLog</summary>
+  
 + *2018-7-20* 
   舍弃了主目录下的`.vimrc`文件，将配置移动到`.vim`文件夹中,便于版本管理。
 + *2018-11-20* 
@@ -50,14 +50,16 @@
 + *2019-6-6*  
   替换 `git` 相关插件 `vim-fugitive` 和 `vim-signify` 为 `coc-git`
   替换全局搜索插件 `ctrlp`  和 `ctrlsf` 为 `fzf.vim`:
-  + 需要安装 `fzf` 和 
-  + 需要安装 `fd` 和 `Rg(ripgrep)`, 可选安装 `highlight` 从而高亮预览结果, *MAC* 下均可使用 `homebrew` 安装
+  + 需要安装 `fzf` 
+  + 需要安装 `fd` 和 `Rg(ripgrep)`, 可选安装 `highlight` 从而高亮预览结果, *MAC* 下均可使用 `homebrew` 安装, *Win* 下使用 `scoop` 安装
   + 需要设置命令行全局变量来设置 `fzf` 的搜索行为
     ```
     export FZF_DEFAULT_COMMAND="fd --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,dist} --type file --hidden"
     export FZF_DEFAULT_OPTS="--height 40% --layout=reverse"
     ```
+    ps: `windows`下 `powershell` 设置环境变量方式为 `[environment]::SetEnvironmentvariable(name, value)`
 + *2019-9-18*
   更新 typescript 语法高亮插件(typescript.vim -> yats.vim)
 + *2019-9-24*
   添加显示文件类型图标插件 `vim-devicons`, 并根据插件要求更换字体为 [Noto Mono Nerd Font Compolete Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Noto/Mono)
+</details>
