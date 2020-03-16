@@ -1,5 +1,5 @@
 {
-  "suggest.enablePreview": true,
+  "suggest.enablePreview": false,
   "suggest.minTriggerInputLength": 2,
 
   "diagnostic.enable": false,
