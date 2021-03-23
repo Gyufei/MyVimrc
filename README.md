@@ -62,4 +62,6 @@
   更新 typescript 语法高亮插件(typescript.vim -> yats.vim)
 + *2019-9-24*
   添加显示文件类型图标插件 `vim-devicons`, 并根据插件要求更换字体为 [Noto Mono Nerd Font Compolete Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Noto/Mono)
++ *2021-3-23*
+  添加 vscode-neovim 配置支持, 使 vscode 可以直接调用 neovim
 </details>

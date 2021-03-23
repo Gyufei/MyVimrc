@@ -87,6 +87,20 @@
   nnoremap <silent> <leader>fb :call FZFOpen(':Buffers')<CR>
   nnoremap <silent> <leader>gc :call FZFOpen(':Commits')<CR>
   nnoremap <silent> <leader>gb :call FZFOpen(':BCommits')<CR>
+
+  let g:fzf_colors = { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
   " }}}
 
 " 彩虹括号插件 {{{
