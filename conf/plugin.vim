@@ -217,3 +217,9 @@ nnoremap <Leader>lt :IndentLinesToggle<CR>
   augroup END
 " }}}
 
+" quick scope 快速跳转 {{{
+  let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+  let g:qs_max_chars=200
+  highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+  highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+" }}}
