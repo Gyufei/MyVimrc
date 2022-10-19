@@ -5,11 +5,18 @@ set incsearch               " 搜索逐字符高亮
 set selection=inclusive
 set selectmode=mouse,key
 
-call plug#begin('~/.vim/bundle')
-  Plug 'asvetliakov/vim-easymotion'
-  Plug 'tpope/vim-surround'
-  Plug 'unblevable/quick-scope'
-call plug#end()
+" 将 Vim 和 Neovim 配置分开之后，Neovim 使用 Packer
+" 管理插件，无法再兼容以下注释配置
+
+" call plug#begin('~/.vim/bundle')
+"  Plug 'asvetliakov/vim-easymotion'
+"  Plug 'tpope/vim-surround'
+"  Plug 'unblevable/quick-scope'
+" call plug#end()
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" let g:qs_max_chars=200
+" highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
+" highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
 
 
 let mapleader = "\<Space>"
@@ -54,7 +61,3 @@ function! s:FindSelectedTextInDir() abort
     endif
 endfunction
 
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_max_chars=200
-highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
