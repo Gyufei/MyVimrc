@@ -1,4 +1,5 @@
-[我的 lua vim 配置](https://github.com/Gyufei/MyLuaVimConfig)
+此仓库已归档<--->[我的新 lua vim 配置](https://github.com/Gyufei/MyLuaVimConfig)
+
 ---
 
 ## vim 模块化配置
