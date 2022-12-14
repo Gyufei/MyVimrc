@@ -1,5 +1,4 @@
-此仓库已归档
-新的配置在[my lua neovim config](https://github.com/Gyufei/MyLuaVimConfig)
+此仓库已归档, 新的配置在 [my lua neovim config](https://github.com/Gyufei/MyLuaVimConfig)
 
 ---
 
