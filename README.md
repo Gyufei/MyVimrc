@@ -1,3 +1,6 @@
+[我的 lua vim 配置](https://github.com/Gyufei/MyLuaVimConfig)
+---
+
 ## vim 模块化配置
 
 > 随着使用 **VIM** 的时间越来越长，添加的各种配置和插件越来越多，vimrc也变得越来越臃肿和混乱，
@@ -35,7 +38,8 @@
 + `term.vim` 用于支持vim内命令行的配置
 + `completion.vim` 补全设置
 
-<details><summary>ChangeLog</summary>
+<details>
+<summary>ChangeLog</summary>
   
 + *2018-7-20* 
   舍弃了主目录下的`.vimrc`文件，将配置移动到`.vim`文件夹中,便于版本管理。
@@ -64,4 +68,8 @@
   添加显示文件类型图标插件 `vim-devicons`, 并根据插件要求更换字体为 [Noto Mono Nerd Font Compolete Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Noto/Mono)
 + *2021-3-23*
   添加 vscode-neovim 配置支持, 使 vscode 可以直接调用 neovim
++ *2022-12-14*
+  迁移到[lua nvim 配置](https://github.com/Gyufei/MyLuaVimConfig)，
+  此 vim 和 nvim 通用配置做最简化处理 只保留几个辅助输入的简单插件，在某些轻量级场景例如浏览代码或快速起步场景够用即可
+  后续不再使用和维护
 </details>
