@@ -31,8 +31,8 @@ vnoremap <Leader>P "+P
 vnoremap <Leader>y "+y
 vnoremap <Leader>d "+d
 
-xnoremap <silent> <leader>/ :<C-u>call <SID>FindSelectedTextInDir()<CR><Esc>
-
+" xnoremap <silent> <leader>/ :<C-u>call <SID>FindSelectedTextInDir()<CR><Esc>
+nnoremap <leader>/ <Cmd>call VSCodeNotify('extension.searchUnderCursor')<CR>
 nnoremap <leader>bm <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
 nnoremap <leader>1 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex1')<CR>
 nnoremap <leader>2 <Cmd>call VSCodeNotify('workbench.action.openEditorAtIndex2')<CR>
